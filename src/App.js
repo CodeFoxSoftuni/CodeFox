@@ -29,9 +29,9 @@ class App extends Component {
                     registerClicked={this.showRegisterView.bind(this)}
                 />
             </header>
-            <div className="parallax-next"></div>
-            <main id="main"></main>
             <div className="parallax"></div>
+            <main id="main"></main>
+            <div className="parallax-next"></div>
             <Footer/>
         </div>
     );

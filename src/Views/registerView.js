@@ -8,6 +8,15 @@ export default class RegisterView extends Component{
         }
     }
     render(){
+
+        slideUp();
+        function slideUp() {
+            let parallax = document.getElementsByClassName("parallax")[0];
+            parallax.style.height = "100%";
+            let parallaxNext = document.getElementsByClassName("parallax-next")[0];
+            parallaxNext.style.height = "740px"
+        }
+
         let options = {
             email: {
                 label: "Email ddress",

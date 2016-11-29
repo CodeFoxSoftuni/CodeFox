@@ -7,6 +7,7 @@ export default class LoginView extends Component{
             this.props.onSubmit(e);
         }
     }
+
     render(){
         let options = {
             email: {
@@ -25,6 +26,15 @@ export default class LoginView extends Component{
             }
         };
         options = Object.assign(options, this.props.options || {});
+
+        slideUp();
+        function slideUp() {
+            let parallax = document.getElementsByClassName("parallax")[0];
+            parallax.style.height = "100%";
+            let parallaxNext = document.getElementsByClassName("parallax-next")[0];
+            parallaxNext.style.height = "740px"
+        }
+
         return (
             <form className="container">
                 <div className="login">
