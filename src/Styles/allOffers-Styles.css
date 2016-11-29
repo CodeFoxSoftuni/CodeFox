@@ -13,7 +13,9 @@ div#grid_container > div{
     border: #f2f2f2 1px solid;
     display: inline-block;
 }
-div#grid_container > div{
+div#grid_container > div>p{
+    margin: auto;
+    margin-left: 0.2em;
 }
 .offerImg{
     display: inline-block;
@@ -23,12 +25,9 @@ div#grid_container > div{
 }
 .offerTitle{
     font: bold 1.2em "Josefin Sans";
-    margin: auto;
-    margin-left: 0.2em;
 }
-.offerPrice{
-    margin: auto;
-    margin-left: 0.2em;
+.toFullLink:hover{
+    color:orange;
 }
 
 div#grid_container > div:nth-child(2n+0) {

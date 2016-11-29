@@ -14,6 +14,7 @@
 
 .nav-bar-link{
     display: inline-block;
+    width: 10em;
     color: orange;
     text-align: center;
     padding: 14px 15px;
@@ -23,7 +24,7 @@
 }
 
 .nav-bar-link:hover{
-    background: black;
+    background: #1e1e1e;
 }
 .nav-bar img {
     display: inline;
