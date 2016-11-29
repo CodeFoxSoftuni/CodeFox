@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './SlideShow-Styles.css'
+import '../Styles/SlideShow-Styles.css'
 
 export default class HomeView extends Component{
     render(){

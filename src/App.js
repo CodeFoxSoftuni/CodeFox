@@ -9,8 +9,8 @@ import HomeView from './Views/homeView';
 import AllOffersGrid from './Views/allOffers';
 
 import './App.css';
-import './Views/Forms-Styles.css';
-import './Views/allOffers-Styles.css';
+import './Styles/Forms-Styles.css';
+import './Styles/allOffers-Styles.css';
 
 class App extends Component {
     constructor(props){

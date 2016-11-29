@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './allOffers-Styles.css'
+import '../Styles/allOffers-Styles.css'
 
 export default class AllOffersGrid extends React.Component {
     render(){
