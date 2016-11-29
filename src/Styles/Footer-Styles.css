@@ -1,7 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 .footer{
-    font-family: "Open Sans Condensed", sans-serif;
-    font-size: small;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.2em;
     list-style-type: none;
     overflow: hidden;
     background-color: orange;

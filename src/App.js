@@ -7,6 +7,7 @@ import LoginView from './Views/loginView';
 import RegisterView from './Views/registerView';
 import HomeView from './Views/homeView';
 import AllOffersGrid from './Views/allOffers';
+import FullOffer from './Views/fullOfferView';
 
 import './App.css';
 import './Styles/Forms-Styles.css';
@@ -53,8 +54,11 @@ class App extends Component {
   showRegisterView(){
       this.showView(<RegisterView/>);
   }
+    clickOffer(){
+      this.showView(<FullOffer/>);
+    }
     showAllOffersView(){
-        this.showView(<AllOffersGrid/>);
+        this.showView(<AllOffersGrid offerClicked={this.clickOffer.bind(this)}/>);
     }
     renderGrid(){
         let blocks = document.getElementById("grid_container").children;

@@ -1,13 +1,13 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 
 .container {
     /*background: #999;*/
     padding: 10px;
     text-align: center;
-    font-family: "Open Sans Condensed", sans-serif;
+    font-family: "Josefin Sans", sans-serif;
     position: absolute;
-    width: 250px;
-    margin-left: 40%;
+    width: 500px;
+    margin-left: 30%;
     margin-top: 100px;
     background: rgba(130,130,130,.3);
     padding: 20px 22px;
@@ -19,7 +19,7 @@
 }
 
 form input, form button {
-    width: 212px;
+    width: 350px;
     border: 1px solid;
     border-bottom-color: rgba(255,255,255,.5);
     border-right-color: rgba(60,60,60,.35);
@@ -28,7 +28,7 @@ form input, form button {
     background-color: rgba(0,0,0,.2);
     background-repeat: no-repeat;
     padding: 8px 24px 8px 10px;
-    font: bold .875em/1.25em "Open Sans Condensed", sans-serif;
+    font: bold .875em/1.25em "Josefin Sans";
     letter-spacing: .075em;
     color: white;
     text-shadow: 0 1px 0 rgba(0,0,0,.1);

@@ -1,8 +1,10 @@
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 div#grid_container{
     width:900px;
     margin:0px auto;
     height:860px;
     border:#999 1px solid;
+    font-family: "Josefin Sans";
 }
 div#grid_container > div{
     background:white;
@@ -12,13 +14,21 @@ div#grid_container > div{
     display: inline-block;
 }
 div#grid_container > div{
-    margin: 2px 2px 2px 2px;
 }
 .offerImg{
     display: inline-block;
     vertical-align: middle;
     max-height: 50%;
     max-width: 50%;
+}
+.offerTitle{
+    font: bold 1.2em "Josefin Sans";
+    margin: auto;
+    margin-left: 0.2em;
+}
+.offerPrice{
+    margin: auto;
+    margin-left: 0.2em;
 }
 
 div#grid_container > div:nth-child(2n+0) {
@@ -27,4 +37,4 @@ div#grid_container > div:nth-child(2n+0) {
 div#grid_container > div:nth-child(2n+1) {
     background: whitesmoke;
 }
-div#grid_container > div > div{ padding: 20px; font-size: 27px; color:#D9A800; }
+div#grid_container > div > div{ padding: 20px; font-size: 2px; color:#D9A800; }
