@@ -3,9 +3,10 @@ import './Footer-Styles.css'
 
 export default class Footer extends Component {
     render() {
+        let dateYear = new Date().getFullYear();
         return (
             <footer className="footer">
-                Our Footer
+                CodeFox© {dateYear}
             </footer>
         );
     }

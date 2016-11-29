@@ -1,14 +1,28 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
-html,
-body {
+html, body {
     height: 100%;
 }
 #main {
-    position: fixed;
     font-family: "Open Sans Condensed", sans-serif;
-    width: 100%;
+}
+.parallax {
+    background-image: url('http://www.magic4walls.com/wp-content/uploads/2014/03/fashion-model-grass-pier-photography-sunset-hd-wallpaper.jpg');
     height: 100%;
-    background-size: 100%;
-    background: url(http://cdn1.bestpsdfreebies.com/wp-content/uploads/2014/05/shards_pattern.jpg) no-repeat center center fixed;
-    flex: 1 1 auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax-next {
+    background-image: url('http://4.bp.blogspot.com/-p5EQJr83RtQ/VGew51LLmyI/AAAAAAAAHnI/Q54CHZgtLJk/s1600/beauty-girl-model-image.jpg');
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div .parallax, .parallax-next{
+    position: inherit;
+    height:690px;
+    font-size:36px;
 }
