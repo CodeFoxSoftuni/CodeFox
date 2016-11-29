@@ -1,24 +1,14 @@
-.App {
-  text-align: center;
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+html,
+body {
+    height: 100%;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+#main {
+    position: fixed;
+    font-family: "Open Sans Condensed", sans-serif;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background: url(http://cdn1.bestpsdfreebies.com/wp-content/uploads/2014/05/shards_pattern.jpg) no-repeat center center fixed;
+    flex: 1 1 auto;
 }
