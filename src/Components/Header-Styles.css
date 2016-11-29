@@ -16,9 +16,18 @@
     padding: 14px 16px;
     text-decoration: none;
     transition: 0.3s;
-    font-size: 17px;
+    font-size: 15pt;
 }
 
 .nav-bar-link:hover{
     background: black;
+}
+.nav-bar img {
+    display: inline;
+    float: left;
+    width: 70px;
+    height: 68px;
+    overflow: hidden;
+    position:absolute;
+    top:0; left:0;
 }

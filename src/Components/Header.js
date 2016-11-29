@@ -7,6 +7,7 @@ export default class Header extends React.Component {
             if(username == null){
                 return (
                 <div className="nav-bar">
+                    <img src='https://s21.postimg.org/hbxdgil47/2f1e3e17638437_562bc8a645054.png' role="presentation" alt="logo"/>
                     <a href="#" className="nav-bar-link" onClick={this.props.homeClicked}>Home</a>
                     <a href="#" className="nav-bar-link" onClick={this.props.loginClicked}>Login</a>
                     <a href="#" className="nav-bar-link" onClick={this.props.registerClicked}>Register</a>
@@ -14,6 +15,7 @@ export default class Header extends React.Component {
                 )} else {
                 return (
                     <div className="nav-bar">
+                        <img src="img/logo.png" alt="logo" />
                         <a href="#" className="nav-bar-link" onClick={this.props.homeClicked}>Home</a>
                         <a href="#" className="nav-bar-link" onClick={this.props.LogoutClicked}>Logout</a>
                     </div>
