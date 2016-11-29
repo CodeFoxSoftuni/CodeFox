@@ -11,6 +11,7 @@ export default class Header extends React.Component {
                     <a href="#" className="nav-bar-link" onClick={this.props.homeClicked}>Home</a>
                     <a href="#" className="nav-bar-link" onClick={this.props.loginClicked}>Login</a>
                     <a href="#" className="nav-bar-link" onClick={this.props.registerClicked}>Register</a>
+                    <a href="#" className="nav-bar-link" onClick={this.props.allOffersClicked}>All offers</a>
                 </div>
                 )} else {
                 return (
@@ -18,6 +19,7 @@ export default class Header extends React.Component {
                         <img src="img/logo.png" alt="logo" />
                         <a href="#" className="nav-bar-link" onClick={this.props.homeClicked}>Home</a>
                         <a href="#" className="nav-bar-link" onClick={this.props.LogoutClicked}>Logout</a>
+                        <a href="#" className="nav-bar-link" onClick={this.props.allOffersClicked}>All offers</a>
                     </div>
                 )
             }

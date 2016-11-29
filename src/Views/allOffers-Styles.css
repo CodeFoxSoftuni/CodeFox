@@ -1,0 +1,30 @@
+div#grid_container{
+    width:900px;
+    margin:0px auto;
+    height:860px;
+    border:#999 1px solid;
+}
+div#grid_container > div{
+    background:white;
+    position:absolute;
+    width: 291px;
+    border: #f2f2f2 1px solid;
+    display: inline-block;
+}
+div#grid_container > div{
+    margin: 2px 2px 2px 2px;
+}
+.offerImg{
+    display: inline-block;
+    vertical-align: middle;
+    max-height: 50%;
+    max-width: 50%;
+}
+
+div#grid_container > div:nth-child(2n+0) {
+    background: white;
+}
+div#grid_container > div:nth-child(2n+1) {
+    background: whitesmoke;
+}
+div#grid_container > div > div{ padding: 20px; font-size: 27px; color:#D9A800; }
