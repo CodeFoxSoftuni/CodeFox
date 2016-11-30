@@ -6,6 +6,7 @@ import Header from './Components/Header';
 import HomeView from './Views/homeView';
 import AllOffersGrid from './Views/allOffers';
 import FullOffer from './Views/fullOfferView';
+import CreateOffer from './Views/createOfferView';
 
 import UserController from './Controllers/UserController';
 import UserModel from './Models/UsersModel';
@@ -14,6 +15,7 @@ import UserView from './Views/UserView';
 import './App.css';
 import './Styles/Forms-Styles.css';
 import './Styles/allOffers-Styles.css';
+import './Styles/createOffer-Styles.css';
 
 import DatabaseRequester from './Utils/DatabaseRequester';
 import $ from 'jquery';
@@ -30,6 +32,7 @@ class App extends Component {
             userId: sessionStorage.getItem('userId'),
         }
     }
+
     render() {
         return (
             <div className="App">
@@ -41,6 +44,7 @@ class App extends Component {
                         registerClicked={this.userController.loadRegisterView.bind(this.userController)}
                         allOffersClicked={this.showAllOffersView.bind(this)}
                         logoutClicked={this.userController.logoutUser.bind(this.userController)}
+                        createOfferClicked={this.showCreateOfferView.bind(this)}
                     />
                     <div id="infoBox"></div>
                 </header>
@@ -98,6 +102,10 @@ class App extends Component {
         this.showView(<AllOffersGrid/>);
     }
 
+    showCreateOfferView(){
+        this.showView(<CreateOffer/>);
+    }
+
 
     componentDidMount() {
         let divHeight = Number($('#header-wrap').height())/16;
@@ -106,5 +114,6 @@ class App extends Component {
         $(document).ajaxError(this.handleAjaxError.bind(this));
     }
 }
+
 
 export default App;

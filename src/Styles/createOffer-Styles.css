@@ -1,14 +1,11 @@
-@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
-
-.container {
-    /*background: #999;*/
+.create-offer-container {
+    padding: 0.63em;
     text-align: center;
     font-family: "Josefin Sans", sans-serif;
     position: fixed;
     left:0;
     right:0;
-    bottom: 1em;
-    width: 31.25em;
+    width: 60em;
     margin:10.5em auto;
     background: rgba(130,130,130,.3);
     padding: 1.25em  1.38em;
@@ -36,13 +33,6 @@ form input, form button {
     text-shadow: 0 0.06px 0 rgba(0,0,0,.1);
     margin-bottom: 1.19em;
 }
-form p{
-    font-size: 40pt;
-    color:#133d3e;
-}
-::-webkit-input-placeholder {
-    color: #333333;
-}
 
 form input:focus { background-color: rgba(0,0,0,.4); }
 
@@ -68,4 +58,37 @@ form button[type=submit] {
     border-bottom-color: #1b4849;
     border-right-color: #1e4d4e;
     cursor: pointer;
+}
+
+.fileUpload {
+    font-family: "Josefin Sans", sans-serif;
+    padding:10px 20px;
+    text-transform: uppercase;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-align:center;
+    cursor: pointer;
+    width: 15.50em;
+    margin-bottom: 0;
+    color: orange;
+    letter-spacing: .05em;
+    text-shadow: 0 0.06em 0 #133d3e;
+    text-transform: uppercase;
+    background: #225556;
+    border-top-color: #9fb5b5;
+    border-left-color: #608586;
+    border-bottom-color: #1b4849;
+    border-right-color: #1e4d4e;
+}
+.fileUpload .upload {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    height:100%;
+    width:100%;
 }

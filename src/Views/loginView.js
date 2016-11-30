@@ -9,6 +9,7 @@ export default class LoginView extends Component {
         return (
             <div className="container">
                 <form className="login">
+                    <p className="welcome">Welcome back</p>
                     <input type='text' placeholder="Username" required
                            ref={e => this.usernameField = e} className="input-txt"/>
                     <input type="password" name="password" placeholder="Password" required
