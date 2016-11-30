@@ -1,42 +1,42 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
-div#grid_container{
-    width:56.25em;
-    margin:0px auto;
-    height:53.75em;
-    padding-top: 60px;
-    height:860px;
-    border:#999 1px solid;
-    font-family: "Josefin Sans";
+#container{
+    height:80em;
 }
-div#grid_container > div{
-    background:white;
-    width: 18.19em;
-    position:relative;
-    width: 291px;
-    border: #f2f2f2 1px solid;
-    display: inline-block;
-}
-div#grid_container > div>p{
-    margin: auto;
-    margin-left: 0.2em;
-}
-.offerImg{
-    display: inline-block;
-    vertical-align: middle;
-    max-height: 50%;
-    max-width: 50%;
-}
-.offerTitle{
-    font: bold 1.2em "Josefin Sans";
-}
-.toFullLink:hover{
-    color:orange;
+section#left {
+    position: fixed;
+    float: left;
+    overflow: auto;
+    height: 100%;
+    color: orange;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 16pt;
+    text-align: center;
+    width: inherit;
 }
 
-div#grid_container > div:nth-child(2n+0) {
-    background: white;
+.category-link{
+    display:block;
+    width: 8em;
+    height: 0.5em;
+    color: orange;
+    text-align: center;
+    padding: 0.88em 0.94em;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15pt;
 }
-div#grid_container > div:nth-child(2n+1) {
-    background: whitesmoke;
+.category-link:hover{
+    background: #1e1e1e;
 }
-div#grid_container > div > div{ padding: 1.25em; font-size: 0.13em; color:#D9A800; }
+#section-label:hover{
+    background: #333;
+}
+#center{
+    vertical-align:top;
+    display:table;
+}
+.offer{
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+}

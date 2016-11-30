@@ -27,7 +27,6 @@ class App extends Component {
             userID: sessionStorage.getItem('userId')
         }
     }
-
     render() {
         return (
             <div className="App">
@@ -42,7 +41,7 @@ class App extends Component {
                     />
                     <div id="infoBox"></div>
                 </header>
-                <main id="main"></main>
+                <main id="main" ></main>
                 <div className="parallax"></div>
                 <div className="parallax-next"></div>
                 <Footer/>
@@ -100,8 +99,8 @@ class App extends Component {
     }
 
     showRegisterView() {
-        alert("reg clicked")
-        console.log(this)
+        alert("reg clicked");
+        console.log(this);
         {this.showView(<RegisterView onsubmit={this.register.bind(this)}/>)}
     }
 
@@ -143,30 +142,13 @@ class App extends Component {
     }
 
     showAllOffersView() {
-        this.showView(<AllOffersGrid offerClicked={this.clickOffer.bind(this)}/>);
+        this.showView(<AllOffersGrid/>);
     }
 
-    renderGrid() {
-        let blocks = document.getElementById("grid_container").children;
-        let pad = 10, cols = 3, newleft, newtop;
-        for (let i = 1; i < blocks.length; i++) {
-            if (i % cols === 0) {
-                newtop = (blocks[i - cols].offsetTop + blocks[i - cols].offsetHeight) + pad;
-                blocks[i].style.top = newtop + "px";
-            } else {
-                if (blocks[i - cols]) {
-                    newtop = (blocks[i - cols].offsetTop + blocks[i - cols].offsetHeight) + pad;
-                    blocks[i].style.top = newtop + "px";
-                }
-                newleft = (blocks[i - 1].offsetLeft + blocks[i - 1].offsetWidth) + pad;
-                blocks[i].style.left = newleft + "px";
-            }
-        }
-    }
     componentDidMount() {
+        let divHeight = Number($('#header-wrap').height())/16;
+        $('#main').css('margin-top', divHeight+'em');
         this.showHomeView();
-        window.addEventListener("load", this.renderGrid, false);
-        window.addEventListener("resize", this.renderGrid, false);
         $(document).ajaxError(this.handleAjaxError.bind(this));
     }
 }

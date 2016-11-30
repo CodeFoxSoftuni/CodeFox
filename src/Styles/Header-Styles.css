@@ -1,14 +1,21 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
-.navbar {
-    text-align: center;
-    font-family: "Josefin Sans", sans-serif;
-    list-style-type: none;
-    background-color: #333;
-    flex: 0 0 auto;
+#header-wrap {
     position: fixed;
-    height: 60px;
+    top:0;
+    height: auto;
     width: 100%;
-    z-index: 10;
+    z-index: 100;
+    font-family: "Josefin Sans", sans-serif;
+    text-align: center;
+    border-bottom: orange 0.09em solid;
+}
+.menu{
+    background: #333;
+}
+
+#foxie{
+    width: 5em;
+    height: 5em;
 }
 
 .nav-bar-link{
@@ -25,43 +32,31 @@
 .nav-bar-link:hover{
     background: #1e1e1e;
 }
-.navbar img {
-    display: inline;
+#helloUser{
     float: left;
-    width: 4em;
-    height: 4em;
-    overflow: hidden;
     position:absolute;
-    top:0; left:0;
+    top:0;
+    left:0
 }
 
-.helloUser {
-    right: 1.88em;
-    margin: 0.88em 0.94em;
-    color: orange;
-    position: absolute;
-    font-size: 15pt;
-    cursor: default;
-}
-
-.helloUser>ul {
+#helloUser>ul {
     list-style: none;
     padding: 0.7em;
     margin:0em;
-    left: -1em;
+    left: -0.7em;
 }
 
-.helloUser > ul li {
+#helloUser > ul li {
     display: block;
     position: relative;
     float: left;
 }
 
-.helloUser > ul {
+#helloUser > ul {
     display: none;
 }
-.helloUser li a {display: block;background: #333;padding: 0.63em 0.63em 0.63em 0.63em;text-decoration: none;
-    white-space: nowrap;color: orange; width:100%; }
-.helloUser li{width:100%;box-sizing: border-box;}
-.helloUser:hover ul {display: block; position: absolute; z-index: 1000 }
-.helloUser a:hover {background: #1e1e1e; width:100% }
+#helloUser li a {display: block;background: #333;padding: 0.63em 0.63em 0.63em 0.63em;text-decoration: none;
+    white-space: nowrap;color: orange; width: 10em;; }
+#helloUser li{width:100%;box-sizing: border-box;}
+#helloUser:hover ul {display: block; position: absolute; z-index: 1000 }
+#helloUser a:hover {background: #1e1e1e; width: 10em; }
