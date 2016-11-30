@@ -7,9 +7,9 @@ export default class HomeView extends React.Component{
         slideDown();
         function slideDown() {
             let parallax = document.getElementsByClassName("parallax")[0];
-            parallax.style.height = "80px";
+            parallax.style.height = "5.00em";
             let parallaxNext = document.getElementsByClassName("parallax-next")[0];
-            parallaxNext.style.height = "40px"
+            parallaxNext.style.height = "2.50em"
         }
             let slideIndex = 0;
             setTimeout(showSlides,20);

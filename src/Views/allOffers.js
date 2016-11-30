@@ -3,9 +3,9 @@ import '../Styles/allOffers-Styles.css'
 
 export default class AllOffersGrid extends React.Component {
     render(){
-    const bigDivStyle = {height:'210px'};
-    const smallDivStyle = { height:'140px' };
-    const mediumDivStyle = {height:'170px'};
+    const bigDivStyle = {height:'13.13em'};
+    const smallDivStyle = { height:'8.75em' };
+    const mediumDivStyle = {height:'10.63em'};
         return(
             <div id="grid_container">
                 <div style={bigDivStyle} >

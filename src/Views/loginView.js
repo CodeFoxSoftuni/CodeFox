@@ -5,7 +5,6 @@ export default class LoginView extends Component {
         e.preventDefault();
         this.props.onsubmit(this.usernameField.value, this.passwordField.value);
     }
-
     render() {
         return (
             <div className="container">

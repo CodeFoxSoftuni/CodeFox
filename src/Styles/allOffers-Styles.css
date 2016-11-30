@@ -1,15 +1,15 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 div#grid_container{
-    width:900px;
+    width:56.25em;
     margin:0px auto;
-    height:860px;
+    height:53.75em;
     border:#999 1px solid;
     font-family: "Josefin Sans";
 }
 div#grid_container > div{
     background:white;
     position:absolute;
-    width: 291px;
+    width: 18.19em;
     border: #f2f2f2 1px solid;
     display: inline-block;
 }
@@ -36,4 +36,4 @@ div#grid_container > div:nth-child(2n+0) {
 div#grid_container > div:nth-child(2n+1) {
     background: whitesmoke;
 }
-div#grid_container > div > div{ padding: 20px; font-size: 2px; color:#D9A800; }
+div#grid_container > div > div{ padding: 1.25em; font-size: 0.13em; color:#D9A800; }

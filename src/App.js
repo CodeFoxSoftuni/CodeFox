@@ -156,11 +156,10 @@ class App extends Component {
             }
         }
     }
-
     componentDidMount() {
+        this.showHomeView();
         window.addEventListener("load", this.renderGrid, false);
         window.addEventListener("resize", this.renderGrid, false);
-
         $(document).ajaxError(this.handleAjaxError.bind(this));
     }
 }
