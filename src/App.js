@@ -105,6 +105,7 @@ class App extends Component {
             .then(registerSuccess.bind(this));
 
         function registerSuccess(userInfo) {
+            this.showHomeView();
             this.saveAuthInSession(userInfo);
             this.showInfo("User registration successful.");
         }

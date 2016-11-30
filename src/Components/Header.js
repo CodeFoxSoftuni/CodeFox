@@ -22,6 +22,7 @@ export default class Header extends React.Component {
                     <a href="#" className="nav-bar-link" onClick={this.props.homeClicked}>Home</a>
                     <a href="#" className="nav-bar-link" onClick={this.props.logoutClicked}>Logout</a>
                     <a href="#" className="nav-bar-link" onClick={this.props.allOffersClicked}>All offers</a>
+                    <span className="helloUser">Hello, {username}!</span>
                 </div>
             )
         }

@@ -35,3 +35,12 @@
     position:absolute;
     top:0; left:0;
 }
+
+.helloUser {
+    right: 30px;
+    margin: 14px 15px;
+    color: orange;
+    position: absolute;
+    font-size: 12pt;
+    cursor: default;
+}
