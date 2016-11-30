@@ -4,6 +4,12 @@
     font-family: "Josefin Sans", sans-serif;
     list-style-type: none;
     background-color: #333;
+<<<<<<< HEAD
+=======
+    flex: 0 0 auto;
+    position: fixed;
+    height: 60px;
+>>>>>>> origin/master
     width: 100%;
 }
 

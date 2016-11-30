@@ -2,14 +2,24 @@
 div#grid_container{
     width:56.25em;
     margin:0px auto;
+<<<<<<< HEAD
     height:53.75em;
+=======
+    padding-top: 60px;
+    height:860px;
+>>>>>>> origin/master
     border:#999 1px solid;
     font-family: "Josefin Sans";
 }
 div#grid_container > div{
     background:white;
+<<<<<<< HEAD
     position:absolute;
     width: 18.19em;
+=======
+    position:relative;
+    width: 291px;
+>>>>>>> origin/master
     border: #f2f2f2 1px solid;
     display: inline-block;
 }
