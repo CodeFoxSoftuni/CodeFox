@@ -8,6 +8,7 @@
     background-color: #333;
     flex: 0 0 auto;
     position: fixed;
+    height: 60px;
     width: 100%;
     z-index: 100;
 }

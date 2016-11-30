@@ -2,13 +2,14 @@
 div#grid_container{
     width:900px;
     margin:0px auto;
+    padding-top: 60px;
     height:860px;
     border:#999 1px solid;
     font-family: "Josefin Sans";
 }
 div#grid_container > div{
     background:white;
-    position:absolute;
+    position:relative;
     width: 291px;
     border: #f2f2f2 1px solid;
     display: inline-block;
