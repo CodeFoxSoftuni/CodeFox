@@ -26,3 +26,25 @@ div .parallax, .parallax-next{
     height:690px;
     font-size:36px;
 }
+
+#infoBox {
+    font-family: "Josefin Sans", sans-serif;
+    width: 80%;
+    margin: 150px auto;
+    position: fixed;
+    left:0;
+    right:0;
+    color: orange;
+    border: 2px solid;
+    background-color: rgba(20,20,20,.7);
+    border-top-color: rgba(255,255,255,.4);
+    border-left-color: rgba(255,255,255,.4);
+    border-bottom-color: rgba(60,60,60,.4);
+    border-right-color: rgba(60,60,60,.4);
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+    display: none;
+    cursor: pointer;
+    z-index: 101;
+}
