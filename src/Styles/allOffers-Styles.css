@@ -10,7 +10,6 @@ div#grid_container{
 }
 div#grid_container > div{
     background:white;
-    position:absolute;
     width: 18.19em;
     position:relative;
     width: 291px;
