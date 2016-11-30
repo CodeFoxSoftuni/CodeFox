@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom';
 
 import Footer from './Components/Footer'
 import Header from './Components/Header';
-import LoginView from './Views/loginView';
-import RegisterView from './Views/registerView';
 import HomeView from './Views/homeView';
 import AllOffersGrid from './Views/allOffers';
 import FullOffer from './Views/fullOfferView';
 
 import UserController from './Controllers/UserController';
-
+import UserModel from './Models/UsersModel';
+import UserView from './Views/UserView';
 
 import './App.css';
 import './Styles/Forms-Styles.css';
@@ -22,9 +21,13 @@ import $ from 'jquery';
 class App extends Component {
     constructor(props) {
         super(props);
+
+        let userModel = new UserModel(DatabaseRequester);
+        let userView = new UserView();
+        this.userController = new UserController(userModel, userView, this);
         this.state = {
             username: sessionStorage.getItem('username'),
-            userID: sessionStorage.getItem('userId')
+            userId: sessionStorage.getItem('userId'),
         }
     }
     render() {
@@ -34,14 +37,14 @@ class App extends Component {
                     <Header
                         username={this.state.username}
                         homeClicked={this.showHomeView.bind(this)}
-                        loginClicked={this.showLoginView.bind(this)}
-                        registerClicked={this.showRegisterView.bind(this)}
+                        loginClicked={this.userController.loadLoginView.bind(this.userController)}
+                        registerClicked={this.userController.loadRegisterView.bind(this.userController)}
                         allOffersClicked={this.showAllOffersView.bind(this)}
-                        logoutClicked={this.logout.bind(this)}
+                        logoutClicked={this.userController.logoutUser.bind(this.userController)}
                     />
                     <div id="infoBox"></div>
                 </header>
-                <main id="main" ></main>
+                <main id="main"></main>
                 <div className="parallax"></div>
                 <div className="parallax-next"></div>
                 <Footer/>
@@ -56,18 +59,6 @@ class App extends Component {
 
     showHomeView() {
         this.showView(<HomeView/>);
-    }
-
-    showLoginView() {
-        this.showView(<LoginView onsubmit={this.login.bind(this)}/>);
-    }
-
-    showInfo(message) {
-        $('#infoBox').css('color', 'orange');
-        $('#infoBox').text(message).show();
-        setTimeout(function() {
-            $('#infoBox').fadeOut();
-        }, 3000);
     }
 
     handleAjaxError(event, response) {
@@ -87,36 +78,6 @@ class App extends Component {
         }, 3000);
     }
 
-    login(username, password) {
-        DatabaseRequester.loginUser(username, password)
-            .then(loginSuccess.bind(this));
-
-        function loginSuccess(userInfo) {
-            this.showHomeView();
-            this.saveAuthInSession(userInfo);
-            this.showInfo("User logged in successfully");
-        }
-    }
-
-    showRegisterView() {
-        alert("reg clicked");
-        console.log(this);
-        {this.showView(<RegisterView onsubmit={this.register.bind(this)}/>)}
-    }
-
-
-    // register is moved to Models/UserModel !!
-    // register(username, password) {
-    //     DatabaseRequester.registerUser(username, password)
-    //         .then(registerSuccess.bind(this));
-    //
-    //     function registerSuccess(userInfo) {
-    //         this.showHomeView();
-    //         this.saveAuthInSession(userInfo);
-    //         this.showInfo("User registration successful.");
-    //     }
-    // }
-
     saveAuthInSession(userInfo) {
         sessionStorage.setItem('authToken', userInfo._kmd.authtoken);
         sessionStorage.setItem('userId', userInfo._id);
@@ -129,14 +90,6 @@ class App extends Component {
         });
     }
 
-    logout() {
-        DatabaseRequester.logoutUser();
-        sessionStorage.clear();
-        this.setState({username: null, userId: null});
-        this.showHomeView();
-        this.showInfo('Logout successful.');
-    }
-
     clickOffer() {
         this.showView(<FullOffer/>);
     }
@@ -144,6 +97,7 @@ class App extends Component {
     showAllOffersView() {
         this.showView(<AllOffersGrid/>);
     }
+
 
     componentDidMount() {
         let divHeight = Number($('#header-wrap').height())/16;
