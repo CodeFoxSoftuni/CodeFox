@@ -1,13 +1,18 @@
 class UsersModel {
-    constructor(baseUrl, appKey, requester, authorizationService) {
-        this.baseUrl = baseUrl;
-        this.appKey = appKey;
+    constructor(requester) {
         this.requester = requester;
-        this.authorizationService = authorizationService;
     }
 
-    registerUser(username, password) {
+    register(username, password) {
         return this.requester.registerUser(username, password);
+    }
+
+    login(username, password) {
+        return this.requester.loginUser(username, password);
+    }
+
+    logout() {
+        return this.requester.logoutUser();
     }
 }
 
