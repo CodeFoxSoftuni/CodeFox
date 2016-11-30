@@ -29,6 +29,7 @@ div .parallax, .parallax-next{
 
 #infoBox {
     font-family: "Josefin Sans", sans-serif;
+    font-size: 1.2em;
     width: 80%;
     margin: 150px auto;
     position: fixed;
@@ -45,6 +46,5 @@ div .parallax, .parallax-next{
     padding: 10px;
     border-radius: 3px;
     display: none;
-    cursor: pointer;
     z-index: 101;
 }

@@ -13,6 +13,9 @@ import './App.css';
 import './Styles/Forms-Styles.css';
 import './Styles/allOffers-Styles.css';
 
+import DatabaseRequester from './Utils/DatabaseRequester';
+import $ from 'jquery';
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -32,7 +35,9 @@ class App extends Component {
                         loginClicked={this.showLoginView.bind(this)}
                         registerClicked={this.showRegisterView.bind(this)}
                         allOffersClicked={this.showAllOffersView.bind(this)}
+                        logoutClicked={this.logout.bind(this)}
                     />
+                    <div id="infoBox"></div>
                 </header>
                 <main id="main"></main>
                 <div className="parallax"></div>
@@ -55,8 +60,40 @@ class App extends Component {
         this.showView(<LoginView onsubmit={this.login.bind(this)}/>);
     }
 
-    login(username, password) {
+    showInfo(message) {
+        $('#infoBox').css('color', 'orange');
+        $('#infoBox').text(message).show();
+        setTimeout(function() {
+            $('#infoBox').fadeOut();
+        }, 3000);
+    }
 
+    handleAjaxError(event, response) {
+        let errorMsg = JSON.stringify(response);
+        if (response.readyState === 0)
+            errorMsg = "Cannot connect due to network error.";
+        if (response.responseJSON && response.responseJSON.description)
+            errorMsg = response.responseJSON.description;
+        this.showError(errorMsg);
+    }
+
+    showError(errorMessage) {
+        $('#infoBox').css('color', 'red');
+        $('#infoBox').text(errorMessage).show();
+        setTimeout(function () {
+            $('#infoBox').fadeOut();
+        }, 3000);
+    }
+
+    login(username, password) {
+        DatabaseRequester.loginUser(username, password)
+            .then(loginSuccess.bind(this));
+
+        function loginSuccess(userInfo) {
+            this.showHomeView();
+            this.saveAuthInSession(userInfo);
+            this.showInfo("User logged in successfully");
+        }
     }
 
     showRegisterView() {
@@ -64,11 +101,37 @@ class App extends Component {
     }
 
     register(username, password) {
+        DatabaseRequester.registerUser(username, password)
+            .then(registerSuccess.bind(this));
 
+        function registerSuccess(userInfo) {
+            this.saveAuthInSession(userInfo);
+            this.showInfo("User registration successful.");
+        }
     }
-    
-    clickOffer(){
-      this.showView(<FullOffer/>);
+
+    saveAuthInSession(userInfo) {
+        sessionStorage.setItem('authToken', userInfo._kmd.authtoken);
+        sessionStorage.setItem('userId', userInfo._id);
+        sessionStorage.setItem('username', userInfo.username);
+
+        // This will update the entire app UI (e.g. the navigation bar)
+        this.setState({
+            username: userInfo.username,
+            userId: userInfo._id
+        });
+    }
+
+    logout() {
+        DatabaseRequester.logoutUser();
+        sessionStorage.clear();
+        this.setState({username: null, userId: null});
+        this.showHomeView();
+        this.showInfo('Logout successful.');
+    }
+
+    clickOffer() {
+        this.showView(<FullOffer/>);
     }
 
     showAllOffersView() {
@@ -96,6 +159,8 @@ class App extends Component {
     componentDidMount() {
         window.addEventListener("load", this.renderGrid, false);
         window.addEventListener("resize", this.renderGrid, false);
+
+        $(document).ajaxError(this.handleAjaxError.bind(this));
     }
 }
 
