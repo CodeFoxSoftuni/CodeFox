@@ -9,6 +9,9 @@ import HomeView from './Views/homeView';
 import AllOffersGrid from './Views/allOffers';
 import FullOffer from './Views/fullOfferView';
 
+import UserController from './Controllers/UserController';
+
+
 import './App.css';
 import './Styles/Forms-Styles.css';
 import './Styles/allOffers-Styles.css';
@@ -97,19 +100,23 @@ class App extends Component {
     }
 
     showRegisterView() {
-        this.showView(<RegisterView onsubmit={this.register.bind(this)}/>);
+        alert("reg clicked")
+        console.log(this)
+        {this.showView(<RegisterView onsubmit={this.register.bind(this)}/>)}
     }
 
-    register(username, password) {
-        DatabaseRequester.registerUser(username, password)
-            .then(registerSuccess.bind(this));
 
-        function registerSuccess(userInfo) {
-            this.showHomeView();
-            this.saveAuthInSession(userInfo);
-            this.showInfo("User registration successful.");
-        }
-    }
+    // register is moved to Models/UserModel !!
+    // register(username, password) {
+    //     DatabaseRequester.registerUser(username, password)
+    //         .then(registerSuccess.bind(this));
+    //
+    //     function registerSuccess(userInfo) {
+    //         this.showHomeView();
+    //         this.saveAuthInSession(userInfo);
+    //         this.showInfo("User registration successful.");
+    //     }
+    // }
 
     saveAuthInSession(userInfo) {
         sessionStorage.setItem('authToken', userInfo._kmd.authtoken);
