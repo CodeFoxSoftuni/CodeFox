@@ -1,35 +1,23 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-export default class LoginView extends Component{
-    onSubmit(e){
+export default class LoginView extends Component {
+    submitForm(e) {
         e.preventDefault();
-        if(this.props.onSubmit){
-            this.props.onSubmit(e);
-        }
+        this.props.onsubmit(this.usernameField.value, this.passwordField.value);
     }
 
-    render(){
-        slideUp();
-        function slideUp() {
-            let parallax = document.getElementsByClassName("parallax")[0];
-            parallax.style.height = "100%";
-            let parallaxNext = document.getElementsByClassName("parallax-next")[0];
-            parallaxNext.style.height = "740px"
-        }
-
+    render() {
         return (
-            <form className="container">
-                <div className="login">
-                    <form >
-                        <input type='text' placeholder="Email" required className="input-txt" />
-                        <input type="password" name="password" placeholder="Password" required className="input-txt" />
-                        <div class="login-footer">
-                            <button type="submit" className="btn btn--right" onClick={this.onSubmit}>Login</button>
-                        </div>
-                    </form>
-                </div>
-            </form>
+            <div className="container">
+                <form className="login">
+                    <input type='text' placeholder="Username" required
+                           ref={e => this.usernameField = e} className="input-txt"/>
+                    <input type="password" name="password" placeholder="Password" required
+                           ref={e => this.passwordField = e} className="input-txt"/>
+                    <button type="submit" className="btn btn--right"
+                            onClick={this.submitForm.bind(this)}>Login</button>
+                </form>
+            </div>
         );
-
     }
 }
