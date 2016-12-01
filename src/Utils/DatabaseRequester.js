@@ -75,19 +75,19 @@ const DatabaseRequester = (function () {
         });
     }
 
-    function createClothAdv(title, author, description) {
+    function createClothAdv(itemType, image, description) {
         return $.ajax({
             method: "POST",
-            url: baseUrl + "appdata/" + appKey + "/books",
+            url: baseUrl + "appdata/" + appKey + "/clothes",
             headers: getKinveyUserAuthHeaders(),
-            data: {title, author, description}
+            data: {itemType, image, description}
         });
     }
 
     function createCarAdv(title, author, description) {
         return $.ajax({
             method: "POST",
-            url: baseUrl + "appdata/" + appKey + "/books",
+            url: baseUrl + "appdata/" + appKey + "/cars",
             headers: getKinveyUserAuthHeaders(),
             data: {title, author, description}
         });

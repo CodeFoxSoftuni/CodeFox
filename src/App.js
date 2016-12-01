@@ -6,12 +6,15 @@ import Header from './Components/Header';
 import HomeView from './Views/homeView';
 import AllOffersGrid from './Views/allOffers';
 import FullOffer from './Views/fullOfferView';
-import CreateOffer from './Views/createOfferView';
 import MyAccount from './Views/myAccount';
 
 import UserController from './Controllers/UserController';
 import UserModel from './Models/UsersModel';
 import UserView from './Views/UserView';
+
+import OfferController from './Controllers/OfferController';
+import OffersModel from './Models/OffersModel';
+import CreateOffer from './Views/createOfferView';
 
 import './App.css';
 import './Styles/Forms-Styles.css';
@@ -29,6 +32,12 @@ class App extends Component {
         let userModel = new UserModel(DatabaseRequester);
         let userView = new UserView();
         this.userController = new UserController(userModel, userView, this);
+
+        let offersModel = new OffersModel(DatabaseRequester);
+        let createOfferView = new CreateOffer();
+        console.dir(offersModel);
+        this.offerController = new OfferController(offersModel, createOfferView, this);
+        console.dir(this.offerController)
         this.state = {
             username: sessionStorage.getItem('username'),
             userId: sessionStorage.getItem('userId'),
@@ -106,7 +115,7 @@ class App extends Component {
     }
 
     showCreateOfferView(){
-        this.showView(<CreateOffer/>);
+        this.showView(<CreateOffer onsubmit={this.offerController.createOffer.bind(this)}/>); // Here we implement the onsubmit property and pass it to OfferController
     }
 
     showMyAccountView() {
