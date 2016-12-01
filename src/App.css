@@ -6,7 +6,7 @@ html, body {
     font-family: "Open Sans Condensed", sans-serif;
 }
 .parallax {
-    background-image: url('http://www.desktopimages.org/pictures/2016/0606/1/looking-at-viewer-women-outdoors-long-hair-redhead-model-women-freckles-curly-hair-rose-flowers-leaves-blue-eyes-pics-426857.jpg');
+    background-image: url('http://bit.ly/11eWI0u');
     height: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -14,7 +14,7 @@ html, body {
     background-size: cover;
 }
 .parallax-next {
-    background-image: url('http://4.bp.blogspot.com/-p5EQJr83RtQ/VGew51LLmyI/AAAAAAAAHnI/Q54CHZgtLJk/s1600/beauty-girl-model-image.jpg');
+    background-image: url('http://bit.ly/2gLrOpM');
     height: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -23,7 +23,7 @@ html, body {
 }
 div .parallax, .parallax-next{
     position: inherit;
-    height:43.13em;
+    height:auto;
     font-size:2.25em;
 }
 

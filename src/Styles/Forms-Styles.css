@@ -1,15 +1,15 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 
 .container {
-    /*background: #999;*/
     text-align: center;
     font-family: "Josefin Sans", sans-serif;
     position: fixed;
     left:0;
     right:0;
+
     bottom: 1em;
     width: 31.25em;
-    margin:10.5em auto;
+    margin:5em auto;
     background: rgba(130,130,130,.3);
     padding: 1.25em  1.38em;
     border:  0.06em solid;
@@ -17,7 +17,7 @@
     border-left-color: rgba(255,255,255,.4);
     border-bottom-color: rgba(60,60,60,.4);
     border-right-color: rgba(60,60,60,.4);
-    overflow:hidden;
+    overflow:auto;
 }
 
 form input, form button {

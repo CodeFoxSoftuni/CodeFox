@@ -1,12 +1,11 @@
 .create-offer-container {
-    padding: 0.63em;
     text-align: center;
     font-family: "Josefin Sans", sans-serif;
-    position: fixed;
+    position: relative;
     left:0;
     right:0;
+    margin: 5em auto;
     width: 60em;
-    margin:10.5em auto;
     background: rgba(130,130,130,.3);
     padding: 1.25em  1.38em;
     border:  0.06em solid;
@@ -14,9 +13,15 @@
     border-left-color: rgba(255,255,255,.4);
     border-bottom-color: rgba(60,60,60,.4);
     border-right-color: rgba(60,60,60,.4);
-    overflow:hidden;
+    overflow:auto;
 }
-
+.form{
+    position:relative;
+    height: 0.19em;
+}
+#mainText{
+    font-size: 17pt;
+}
 form input, form button {
     width: 21.88em;
     border: 0.06em solid;
@@ -30,7 +35,7 @@ form input, form button {
     font: bold .875em/1.25em "Josefin Sans";
     letter-spacing: .075em;
     color: white;
-    text-shadow: 0 0.06px 0 rgba(0,0,0,.1);
+    text-shadow: 0 0.06em 0 rgba(0,0,0,.1);
     margin-bottom: 1.19em;
 }
 
@@ -60,35 +65,79 @@ form button[type=submit] {
     cursor: pointer;
 }
 
-.fileUpload {
-    font-family: "Josefin Sans", sans-serif;
-    padding:10px 20px;
-    text-transform: uppercase;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    text-align:center;
-    cursor: pointer;
-    width: 15.50em;
-    margin-bottom: 0;
-    color: orange;
-    letter-spacing: .05em;
-    text-shadow: 0 0.06em 0 #133d3e;
-    text-transform: uppercase;
-    background: #225556;
-    border-top-color: #9fb5b5;
-    border-left-color: #608586;
-    border-bottom-color: #1b4849;
-    border-right-color: #1e4d4e;
+.stepHeading{
+    font-size: 20pt;
+    align-content: center;
 }
-.fileUpload .upload {
+.selectGroup{
+    width: 15em;
+    clear:both;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 15pt;
+    background: #333;
+    border: orange 0.07em solid;
+    position:relative;
+    display:inline-block;
+    cursor:default;
+    text-align:left;
+    line-height:30px;
+    color:orange;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    -o-appearance:none;
+    box-shadow: inset;
+}
 
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    opacity: 0;
-    height:100%;
-    width:100%;
+option:hover {
+    background:#1e1e1e;
+}
+input, textarea, select, a { outline: none; }
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.custom-file-input::before {
+    font-family: "Josefin Sans", sans-serif;
+    content: 'Select image';
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #333, #1e1e1e);
+    border: 1px solid orange;
+    padding: 5px 8px;
+    outline: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    color: orange;
+    font-size: 15pt;
+}
+.custom-file-input:hover::before {
+    border-color: orange;
+    background:#1e1e1e;
+}
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top,#333, #1e1e1e);
+}
+.imgPreview{
+    align-content: center;
+    transform: scale(0.3, 0.3);
+    -ms-transform: scale(0.3, 0.3);
+    -webkit-transform: scale(0.3, 0.3);
+}
+textarea{
+    width: 21.88em;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 15pt;
+    display:block;
+    box-sizing: padding-box;
+    overflow:hidden;
+    padding:0.6em;
+    margin:0.3em auto;
+    box-shadow:0.1em 0.1em 0.49em rgba(0,0,0,.3);
+    border:0;
+    border-bottom-color: rgba(255,255,255,.5);
+    border-right-color: rgba(60,60,60,.35);
+    border-top-color: rgba(60,60,60,.35);
+    border-left-color: rgba(80,80,80,.45);
+    background-color: rgba(0,0,0,.2);
+    background-repeat: no-repeat;
 }
