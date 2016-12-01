@@ -7,6 +7,7 @@ import HomeView from './Views/homeView';
 import AllOffersGrid from './Views/allOffers';
 import FullOffer from './Views/fullOfferView';
 import CreateOffer from './Views/createOfferView';
+import MyAccount from './Views/myAccount';
 
 import UserController from './Controllers/UserController';
 import UserModel from './Models/UsersModel';
@@ -16,6 +17,7 @@ import './App.css';
 import './Styles/Forms-Styles.css';
 import './Styles/allOffers-Styles.css';
 import './Styles/createOffer-Styles.css';
+import './Styles/myAccount-Style.css'
 
 import DatabaseRequester from './Utils/DatabaseRequester';
 import $ from 'jquery';
@@ -45,6 +47,7 @@ class App extends Component {
                         allOffersClicked={this.showAllOffersView.bind(this)}
                         logoutClicked={this.userController.logoutUser.bind(this.userController)}
                         createOfferClicked={this.showCreateOfferView.bind(this)}
+                        myAccountClicked={this.showMyAccountView.bind(this)}
                     />
                     <div id="infoBox"></div>
                 </header>
@@ -104,6 +107,10 @@ class App extends Component {
 
     showCreateOfferView(){
         this.showView(<CreateOffer/>);
+    }
+
+    showMyAccountView() {
+        this.showView(<MyAccount/>);
     }
 
 
