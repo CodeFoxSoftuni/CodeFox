@@ -1,7 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 #container{
-    background-color: rgba(49, 122, 120, 0.48);
+    background: transparent;
     height:80em;
+    font-family: "Josefin Sans", sans-serif;
 }
 section#left {
     position: fixed;
@@ -10,6 +11,7 @@ section#left {
     height: 100%;
     color: orange;
     font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
     font-size: 16pt;
     text-align: center;
     width: inherit;
@@ -37,19 +39,54 @@ section#left {
     display:table;
 }
 .offer{
-    margin: 2px;
+    margin: 0.12em;
     min-width: 15em;
     min-height: 10em;
     max-width: 15em;
     max-height: 10em;
     display:inline-block;
+    display-inside: table;
     vertical-align:middle;
     text-align:center;
-    background-color: #a9f4c1;
+    background: url(http://bit.ly/2gPJqkl)
+}
+.offer a{
+    color: white;
+    text-decoration: none;
+}
+.offer a:hover{
+    color: orange;
+    text-decoration: none;
 }
 .offer-image {
-    min-width: 10em;
-    max-width: 10em;
-    min-height: 10em;
-    max-height: 10em;
+    min-width: 9.9em;
+    max-width: 9.9em;
+    min-height: 9.9em;
+    max-height: 9.9em;
+}
+
+#singleOffer>img{
+    display: table-cell;
+    float:left;
+    margin-bottom: 1em;
+}
+
+#offerInfo{
+    display: table-cell;
+    color:white;
+    width:auto;
+    min-width:4em;
+    background: rgba(106, 106, 106, 0.3);
+    float:right;
+    text-align: center;
+    font-size:12pt;
+    font-family: "Josefin Sans", sans-serif;
+    border:  0.06em solid;
+    border-top-color: rgba(255,255,255,.4);
+    border-left-color: rgba(255,255,255,.4);
+    border-bottom-color: rgba(60,60,60,.4);
+    border-right-color: rgba(60,60,60,.4);
+}
+#offerPrice{
+    color:black;
 }
