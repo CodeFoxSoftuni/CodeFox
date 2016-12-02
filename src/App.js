@@ -45,22 +45,24 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <header>
-                    <Header
-                        username={this.state.username}
-                        homeClicked={this.showHomeView.bind(this)}
-                        loginClicked={this.userController.loadLoginView.bind(this.userController)}
-                        registerClicked={this.userController.loadRegisterView.bind(this.userController)}
-                        allOffersClicked={this.offerController.loadOffers.bind(this.offerController)}
-                        logoutClicked={this.userController.logoutUser.bind(this.userController)}
-                        createOfferClicked={this.showCreateOfferView.bind(this)}
-                        myAccountClicked={this.showMyAccountView.bind(this)}
-                    />
-                    <div id="infoBox"></div>
-                </header>
-                <main id="main"></main>
-                <div className="parallax"></div>
-                <div className="parallax-next"></div>
+                <div>
+                    <header>
+                        <Header
+                            username={this.state.username}
+                            homeClicked={this.showHomeView.bind(this)}
+                            loginClicked={this.userController.loadLoginView.bind(this.userController)}
+                            registerClicked={this.userController.loadRegisterView.bind(this.userController)}
+                            allOffersClicked={this.offerController.loadOffers.bind(this.offerController)}
+                            logoutClicked={this.userController.logoutUser.bind(this.userController)}
+                            createOfferClicked={this.showCreateOfferView.bind(this)}
+                            myAccountClicked={this.showMyAccountView.bind(this)}
+                        />
+                        <div id="infoBox"></div>
+                    </header>
+                    <div className="parallax">
+                        <main id="main"></main>
+                    </div>
+                </div>
                 <Footer/>
             </div>
         );

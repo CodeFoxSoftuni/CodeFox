@@ -3,14 +3,6 @@ import '../Styles/SlideShow-Styles.css'
 
 export default class HomeView extends React.Component{
     render(){
-
-        slideDown();
-        function slideDown() {
-            let parallax = document.getElementsByClassName("parallax")[0];
-            parallax.style.height = "5em";
-            let parallaxNext = document.getElementsByClassName("parallax-next")[0];
-            parallaxNext.style.height = "2.50em"
-        }
             let slideIndex = 0;
             setTimeout(showSlides,20);
         function showSlides() {
