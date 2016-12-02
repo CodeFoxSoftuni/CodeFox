@@ -1,11 +1,12 @@
 import React from 'react';
 import $ from 'jquery';
 import SingleOffer from '../Components/SingleOffer';
+import '../Styles/allOffers-Styles.css'
 
 export default class AllOffersGrid extends React.Component {
     componentDidMount() {
         let divWidth = Number($('#left').width()) / 16;
-        $('#center').css('margin-left', divWidth + 'em');
+        $('#center').css('margin-left', divWidth + 5 + 'em');
     }
 
     render() {
@@ -21,7 +22,7 @@ export default class AllOffersGrid extends React.Component {
                 <section id="center">
                     {this.props.offers.map((item, index) => {
                         return (
-                            <div className="single-offer" key={index}>
+                            <div className="offer" key={index}>
                             <SingleOffer
                                          image={item.image}
                                          itemType={item.itemType}

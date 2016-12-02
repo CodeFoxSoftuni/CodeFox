@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 #container{
+    background-color: rgba(49, 122, 120, 0.48);
     height:80em;
 }
 section#left {
@@ -36,7 +37,19 @@ section#left {
     display:table;
 }
 .offer{
-    display:table-cell;
+    margin: 2px;
+    min-width: 15em;
+    min-height: 10em;
+    max-width: 15em;
+    max-height: 10em;
+    display:inline-block;
     vertical-align:middle;
     text-align:center;
+    background-color: #a9f4c1;
+}
+.offer-image {
+    min-width: 10em;
+    max-width: 10em;
+    min-height: 10em;
+    max-height: 10em;
 }
