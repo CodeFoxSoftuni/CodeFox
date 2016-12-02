@@ -56,6 +56,14 @@ const DatabaseRequester = (function () {
         });
     }
 
+    function findSingleCloth(id) {
+        return $.ajax({
+            method: "GET",
+            url: baseUrl + "appdata/" + appKey + "/clothes/" + id,
+            headers: getKinveyUserAuthHeaders()
+        });
+    }
+
     function findAllCars() {
         return $.ajax({
             method: "GET",
@@ -112,7 +120,7 @@ const DatabaseRequester = (function () {
 
     return {
         loginUser, registerUser, logoutUser,
-        findAllBooks, createBookAdv, findAllClothes, createClothAdv, findAllCars, createCarAdv, editBook, deleteBook
+        findAllBooks, createBookAdv, findAllClothes, createClothAdv, findAllCars, createCarAdv, editBook, deleteBook, findSingleCloth
     }
 })();
 

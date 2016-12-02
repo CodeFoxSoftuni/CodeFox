@@ -9,6 +9,9 @@ export default class AllOffersGrid extends React.Component {
         $('#center').css('margin-left', divWidth + 5 + 'em');
     }
 
+    detailsHandler (id) {
+        this.props.details(id);
+    }
     render() {
         return (
             <div id="container">
@@ -27,6 +30,7 @@ export default class AllOffersGrid extends React.Component {
                                          image={item.image}
                                          itemType={item.itemType}
                                          price={item.price}
+                                         details = {() => this.detailsHandler(item._id)}
                             />
                             </div>
                         )

@@ -7,8 +7,8 @@ class OffersModel {
         return this.requester.createClothAdv(itemType, category, image, description, price);
     }
 
-    viewDetailed(){
-        //TODO: Implement details page
+    viewDetailed(id){
+        return this.requester.findSingleCloth(id);
     }
 
     loadOffers(){

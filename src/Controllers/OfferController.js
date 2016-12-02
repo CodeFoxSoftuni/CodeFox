@@ -23,6 +23,16 @@ class OfferController {
             _self.app.showAllOffersView(response);
         }
     }
+
+    loadSingleOffer(id) {
+        let _self = this;
+        this.model.viewDetailed(id)
+            .then(loadSingleOfferSuccess);
+
+        function loadSingleOfferSuccess(response) {
+            _self.app.showDetailedOffer(response);
+        }
+    }
 }
 
 export default OfferController;

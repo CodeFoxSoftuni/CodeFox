@@ -10,7 +10,7 @@ class SingleOffer extends React.Component {
                             <h3 >{this.props.category}</h3>
                             <h4 >{this.props.itemType}</h4>
                             <h5 id="offerPrice">{this.props.price}</h5>
-                            <a href="#" id="See more">See more</a>
+                            <a href="#" id="See more" onClick={this.props.details}>See more</a>
                         </div>
             </span>
         )

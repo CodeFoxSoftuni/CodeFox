@@ -15,6 +15,7 @@ import UserView from './Views/UserView';
 import OfferController from './Controllers/OfferController';
 import OffersModel from './Models/OffersModel';
 import CreateOffer from './Views/createOfferView';
+import DetailedOffer from './Components/DetailedOffer';
 
 import './App.css';
 import './Styles/Forms-Styles.css';
@@ -112,7 +113,13 @@ class App extends Component {
 
     showAllOffersView(response) {
         this.showView(<AllOffersGrid
-            offers={response}/>); // Pass property to the component.
+            offers= {response}
+            details={this.offerController.loadSingleOffer.bind(this.offerController)}
+        />);
+    }
+
+    showDetailedOffer(response) {
+        this.showView(<DetailedOffer details={response}/>)
     }
 
     showCreateOfferView(){
