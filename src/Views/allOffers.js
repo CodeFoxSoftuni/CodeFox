@@ -15,11 +15,13 @@ export default class AllOffersGrid extends React.Component {
     render() {
         return (
             <div id="container">
-                <section id="left" className="menu">
+                <section id="left" className="categoriesMenu">
                     <a href="#" id='section-label' className="category-link">CATEGORIES</a>
-                    <a href="#" className="category-link">Example</a>
-                    <a href="#" className="category-link">Example</a>
-                    <a href="#" className="category-link">Example</a>
+                    <a href="#" className="category-link">Lingerie</a>
+                    <a href="#" className="category-link">Shirts, Blouses, Sweaters</a>
+                    <a href="#" className="category-link">Bottoms</a>
+                    <a href="#" className="category-link">Sport wear</a>
+                    <a href="#" className="category-link">Shoes</a>
                 </section>
                 <br></br>
                 <section id="center">

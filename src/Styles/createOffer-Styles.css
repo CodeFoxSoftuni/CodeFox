@@ -21,6 +21,7 @@
 }
 #mainText{
     font-size: 17pt;
+    color:lightgray;
 }
 form input, form button {
     width: 21.88em;

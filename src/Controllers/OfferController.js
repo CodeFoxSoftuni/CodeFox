@@ -17,7 +17,7 @@ class OfferController {
     loadOffers() {
         let _self = this;
         this.model.loadOffers()
-            .then(loadOffersSuccess)
+            .then(loadOffersSuccess);
 
         function loadOffersSuccess(response) {
             _self.app.showAllOffersView(response);

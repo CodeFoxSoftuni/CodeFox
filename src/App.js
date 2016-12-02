@@ -11,6 +11,7 @@ import MyAccount from './Views/myAccount';
 import UserController from './Controllers/UserController';
 import UserModel from './Models/UsersModel';
 import UserView from './Views/UserView';
+import AboutTheTeam from './Views/aboutTheTeam';
 
 import OfferController from './Controllers/OfferController';
 import OffersModel from './Models/OffersModel';
@@ -22,6 +23,7 @@ import './Styles/Forms-Styles.css';
 import './Styles/allOffers-Styles.css';
 import './Styles/createOffer-Styles.css';
 import './Styles/myAccount-Style.css'
+import './Styles/aboutTheTeam-Styles.css'
 
 import DatabaseRequester from './Utils/DatabaseRequester';
 import $ from 'jquery';
@@ -64,9 +66,11 @@ class App extends Component {
                         <main id="main"></main>
                     </div>
                 </div>
-                <Footer/>
+                <Footer
+                    aboutTheTeamClicked={this.showAboutTheTeamView.bind(this)}
+                />
             </div>
-        );
+        )
     }
 
     showView(component) {
@@ -107,8 +111,8 @@ class App extends Component {
         });
     }
 
-    clickOffer() {
-        this.showView(<FullOffer/>);
+    showAboutTheTeamView(){
+        this.showView(<AboutTheTeam/>);
     }
 
     showAllOffersView(response) {
