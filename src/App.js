@@ -109,7 +109,7 @@ class App extends Component {
     }
 
     showAllOffersView() {
-        this.showView(<AllOffersGrid/>);
+        this.showView(<AllOffersGrid />); // Pass property to the component.
     }
 
     showCreateOfferView(){

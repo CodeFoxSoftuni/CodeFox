@@ -7,10 +7,10 @@ class OfferController {
 
     createOffer(itemType, category, image, description, price) {
         this.model.create(itemType, category, image, description, price)
-            .then(registerSuccess.bind(this));
-        function registerSuccess() {
-            this.app.showAllOffersView(); // TODO: returns Exeption this.app.showAllOffersView() is not a function
-            this.app.showInfo("Offer created successfully."); // TODO: Not working
+            .then(createOfferSuccess.bind(this));
+        function createOfferSuccess(response) {
+            this.app.showAllOffersView();
+            this.app.showInfo("Offer created successfully."); // TODO: Info box not showing after successful query
         }
     }
 }

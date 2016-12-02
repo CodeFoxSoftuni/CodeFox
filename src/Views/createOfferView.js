@@ -15,7 +15,7 @@ export default class CreateOffer extends Component {
 
     submitForm(e) {
         e.preventDefault();
-        this.props.onsubmit(this.state.itemType, this.state.category,this.state.imagePreviewUrl, this.state.description, this.state.description, this.state.price);
+        this.props.onsubmit(this.state.itemType, this.state.category,this.state.imagePreviewUrl, this.state.description, this.state.price);
     }
     _handleImageChange(e) {
         e.preventDefault();
@@ -85,7 +85,7 @@ export default class CreateOffer extends Component {
                         </select>
                         <div className="stepHeading">Step 2: Choose a category</div>
                         <select className="selectGroup"
-                                name="itemType" onChange={this.handleChange.bind(this)}>
+                                name="category" onChange={this.handleChange.bind(this)}>
                                 <option value="Lingerie">Lingerie</option>
                                 <option value="Bottoms">Bottoms</option>
                                 <option value="Shoes">Shoes</option>
@@ -104,7 +104,7 @@ export default class CreateOffer extends Component {
                                   name="description" onChange={this.handleChange.bind(this)}></textarea>
                         <div className="stepHeading">Step 5: Add Price</div>
                         <textarea className='autoExpand' rows='3' data-min-rows='3'
-                                  name="description" onChange={this.handleChange.bind(this)}></textarea>
+                                  name="price" onChange={this.handleChange.bind(this)}></textarea>
                         <div></div>
                         <button type="submit" className="btn btn--right"
                              onClick={this.submitForm.bind(this)}>Create</button>
