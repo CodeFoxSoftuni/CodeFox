@@ -50,6 +50,10 @@ section#left {
     text-align:center;
     background: url(http://bit.ly/2gPJqkl)
 }
+.offer:hover {
+    width:5em;
+    height: 7em;
+}
 .offer a{
     color: white;
     text-decoration: none;

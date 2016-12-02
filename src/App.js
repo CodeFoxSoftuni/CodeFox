@@ -61,7 +61,9 @@ class App extends Component {
                 <main id="main"></main>
                 <div className="parallax"></div>
                 <div className="parallax-next"></div>
-                <Footer/>
+                <Footer
+                    aboutTeam=""
+                />
             </div>
         );
     }
