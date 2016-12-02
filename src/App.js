@@ -95,18 +95,6 @@ class App extends Component {
         }, 3000);
     }
 
-    showLoading(isDone) {
-        let info = $('#infoBox');
-        info.css('color', 'orange');
-        info.text("Loading...");
-        if (!isDone) {
-            info.show();
-        } else {
-            info.hide();
-        }
-    }
-
-
     saveAuthInSession(userInfo) {
         sessionStorage.setItem('authToken', userInfo._kmd.authtoken);
         sessionStorage.setItem('userId', userInfo._id);
