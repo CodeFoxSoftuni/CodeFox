@@ -1,6 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 #container{
-    background: transparent;
     height:80em;
     font-family: "Josefin Sans", sans-serif;
 }
@@ -39,6 +38,7 @@ section#left {
     display:table;
 }
 .offer{
+    align-content: center;
     margin: 0.12em;
     min-width: 15em;
     min-height: 10em;
@@ -49,6 +49,10 @@ section#left {
     vertical-align:middle;
     text-align:center;
     background: url(http://bit.ly/2gPJqkl)
+}
+.offer:hover {
+    width:5em;
+    height: 7em;
 }
 .offer a{
     color: white;

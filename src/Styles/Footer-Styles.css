@@ -12,4 +12,27 @@
     left: 0;
     padding:  0.50em 0.56em;
     flex: 0 1 2.50em;
+    color:#333;
+    border-top: #333 0.09em solid;
+}
+#hiddenFooter{
+    display:none;
+    height: 2em;
+}
+
+footer:hover #hiddenFooter{
+    display:block;
+}
+.footer-link{
+    display: inline-block;
+    width: 10em;
+    color: #333;
+    text-align: center;
+    padding: 0.88em 0.94em;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15pt;
+}
+.footer-link:hover{
+    background-color: #f19400;
 }
