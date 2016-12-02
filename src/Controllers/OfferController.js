@@ -20,7 +20,6 @@ class OfferController {
             .then(loadOffersSuccess)
 
         function loadOffersSuccess(response) {
-            alert('loaded offers');
             _self.app.showAllOffersView(response);
         }
     }
