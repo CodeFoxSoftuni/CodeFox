@@ -95,6 +95,18 @@ class App extends Component {
         }, 3000);
     }
 
+    showLoading(isDone) {
+        let info = $('#infoBox');
+        info.css('color', 'orange');
+        info.text("Loading...");
+        if (!isDone) {
+            info.show();
+        } else {
+            info.hide();
+        }
+    }
+
+
     saveAuthInSession(userInfo) {
         sessionStorage.setItem('authToken', userInfo._kmd.authtoken);
         sessionStorage.setItem('userId', userInfo._id);
@@ -113,7 +125,7 @@ class App extends Component {
 
     showAllOffersView(response) {
         this.showView(<AllOffersGrid
-            offers= {response}
+            offers={response}
             details={this.offerController.loadSingleOffer.bind(this.offerController)}
         />);
     }
@@ -122,7 +134,7 @@ class App extends Component {
         this.showView(<DetailedOffer details={response}/>)
     }
 
-    showCreateOfferView(){
+    showCreateOfferView() {
         this.showView(<CreateOffer onsubmit={this.offerController.createOffer.bind(this.offerController)}/>); // Here we implement the onsubmit property and pass it to OfferController
     }
 
@@ -132,19 +144,28 @@ class App extends Component {
 
 
     componentDidMount() {
-        let divHeight = Number($('#header-wrap').height())/16;
-        $('#main').css('margin-top', divHeight+'em');
+        let divHeight = Number($('#header-wrap').height()) / 16;
+        let info = $('#infoBox');
+        info.css('color', 'orange');
+        info.text("Loading...");
+        $(document).ajaxStart(function () {
+            info.show();
+        });
+        $(document).ajaxStop(function () {
+            info.hide();
+        });
+        $('#main').css('margin-top', divHeight + 'em');
         this.showHomeView();
         $(document).ajaxError(this.handleAjaxError.bind(this));
         $(document)
-            .one('focus.autoExpand', 'textarea.autoExpand', function(){
+            .one('focus.autoExpand', 'textarea.autoExpand', function () {
                 var savedValue = this.value;
                 this.value = '';
                 this.baseScrollHeight = this.scrollHeight;
                 this.value = savedValue;
             })
-            .on('input.autoExpand', 'textarea.autoExpand', function(){
-                var minRows = this.getAttribute('data-min-rows')|0, rows;
+            .on('input.autoExpand', 'textarea.autoExpand', function () {
+                var minRows = this.getAttribute('data-min-rows') | 0, rows;
                 this.rows = minRows;
                 rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 17);
                 this.rows = minRows + rows;
