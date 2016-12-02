@@ -6,6 +6,7 @@
 }
 
 .categoriesMenu {
+    background: #333;
     position: static;
     float: left;
     height: 100%;
