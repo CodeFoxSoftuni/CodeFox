@@ -48,7 +48,15 @@ const DatabaseRequester = (function () {
         });
     }
 
-    function findAllClothes() {
+    function findAllClothes(category) {
+        if(category != null){
+            let query = '?query='+ JSON.stringify({category:category});
+            return $.ajax({
+                method: "GET",
+                url: baseUrl + "appdata/" + appKey + '/clothes/' + query,
+                headers: getKinveyUserAuthHeaders()
+            });
+        }
         return $.ajax({
             method: "GET",
             url: baseUrl + "appdata/" + appKey + "/clothes",

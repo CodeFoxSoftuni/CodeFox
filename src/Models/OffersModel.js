@@ -11,7 +11,10 @@ class OffersModel {
         return this.requester.findSingleCloth(id);
     }
 
-    loadOffers(){
+    loadOffers(category){
+        if(category != null){
+            return this.requester.findAllClothes(category);
+        }
         return this.requester.findAllClothes();
     }
 }

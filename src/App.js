@@ -119,6 +119,7 @@ class App extends Component {
         this.showView(<AllOffersGrid
             offers={response}
             details={this.offerController.loadSingleOffer.bind(this.offerController)}
+            listByCategory={this.offerController.loadOffers.bind(this.offerController)}
         />);
     }
 
@@ -139,8 +140,8 @@ class App extends Component {
         let divHeight = Number($('#header-wrap').height()) / 16;
         let info = $('#infoBox');
         info.css('color', 'orange');
-        info.text("Loading...");
         $(document).ajaxStart(function () {
+            info.text("Loading...");
             info.show();
         });
         $(document).ajaxStop(function () {
