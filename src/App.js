@@ -115,6 +115,7 @@ class App extends Component {
         this.showView(<AllOffersGrid
             offers={response}
             details={this.offerController.loadSingleOffer.bind(this.offerController)}
+            listByCategory={this.offerController.loadOffers.bind(this.offerController)}
         />);
     }
 

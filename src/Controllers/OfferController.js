@@ -14,10 +14,16 @@ class OfferController {
         }
     }
 
-    loadOffers() {
+    loadOffers(category) {
         let _self = this;
-        this.model.loadOffers()
-            .then(loadOffersSuccess)
+        if(typeof category === 'string') {
+            this.model.loadOffers(category)
+                .then(loadOffersSuccess);
+        } else {
+            this.model.loadOffers()
+                .then(loadOffersSuccess);
+        }
+
 
         function loadOffersSuccess(response) {
             _self.app.showAllOffersView(response);
