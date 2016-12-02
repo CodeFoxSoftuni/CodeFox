@@ -6,25 +6,12 @@ html, body {
     font-family: "Open Sans Condensed", sans-serif;
 }
 .parallax {
-    background-image: url('http://bit.ly/11eWI0u');
-    height: 100%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.parallax-next {
-    background-image: url('http://bit.ly/2gLrOpM');
-    height: 100%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-div .parallax, .parallax-next{
-    position: inherit;
-    height:auto;
-    font-size:2.25em;
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-image: url("https://wallpaperscraft.com/image/bokeh_macro_branch_foliage_autumn_87042_3840x2400.jpg");
+    z-index: -100;
 }
 
 #infoBox {
