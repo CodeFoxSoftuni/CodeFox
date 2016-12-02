@@ -7,7 +7,7 @@ class OfferController {
 
     createOffer(itemType, image, description) {
         console.log(this.model);
-        this.model.create(itemType, image, description) //TODO: here model == undefined, when create offer is clicked
+        this.model.create(itemType, image, description) //FIXED: here model == undefined, when create offer is clicked.
             .then(registerSuccess.bind(this));
 
         function registerSuccess(response) {

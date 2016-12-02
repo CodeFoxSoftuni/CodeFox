@@ -115,7 +115,7 @@ class App extends Component {
     }
 
     showCreateOfferView(){
-        this.showView(<CreateOffer onsubmit={this.offerController.createOffer.bind(this)}/>); // Here we implement the onsubmit property and pass it to OfferController
+        this.showView(<CreateOffer onsubmit={this.offerController.createOffer.bind(this.offerController)}/>); // Here we implement the onsubmit property and pass it to OfferController
     }
 
     showMyAccountView() {
