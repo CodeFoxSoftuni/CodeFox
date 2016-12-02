@@ -13,6 +13,17 @@ class OfferController {
             this.app.showInfo("Offer created successfully."); // TODO: Info box not showing after successful query
         }
     }
+
+    loadOffers() {
+        let _self = this;
+        this.model.loadOffers()
+            .then(loadOffersSuccess)
+
+        function loadOffersSuccess(response) {
+            alert('loaded offers');
+            _self.app.showAllOffersView(response);
+        }
+    }
 }
 
 export default OfferController;

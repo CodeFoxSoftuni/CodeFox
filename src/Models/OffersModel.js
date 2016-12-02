@@ -10,6 +10,10 @@ class OffersModel {
     viewDetailed(){
         //TODO: Implement details page
     }
+
+    loadOffers(){
+        return this.requester.findAllClothes();
+    }
 }
 
 

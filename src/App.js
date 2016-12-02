@@ -51,7 +51,7 @@ class App extends Component {
                         homeClicked={this.showHomeView.bind(this)}
                         loginClicked={this.userController.loadLoginView.bind(this.userController)}
                         registerClicked={this.userController.loadRegisterView.bind(this.userController)}
-                        allOffersClicked={this.showAllOffersView.bind(this)}
+                        allOffersClicked={this.offerController.loadOffers.bind(this.offerController)}
                         logoutClicked={this.userController.logoutUser.bind(this.userController)}
                         createOfferClicked={this.showCreateOfferView.bind(this)}
                         myAccountClicked={this.showMyAccountView.bind(this)}
@@ -108,8 +108,9 @@ class App extends Component {
         this.showView(<FullOffer/>);
     }
 
-    showAllOffersView() {
-        this.showView(<AllOffersGrid />); // Pass property to the component.
+    showAllOffersView(response) {
+        this.showView(<AllOffersGrid
+            offers={response}/>); // Pass property to the component.
     }
 
     showCreateOfferView(){
