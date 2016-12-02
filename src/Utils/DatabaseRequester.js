@@ -75,12 +75,12 @@ const DatabaseRequester = (function () {
         });
     }
 
-    function createClothAdv(itemType, image, description) {
+    function createClothAdv(itemType, category, image, description, price) {
         return $.ajax({
             method: "POST",
             url: baseUrl + "appdata/" + appKey + "/clothes",
             headers: getKinveyUserAuthHeaders(),
-            data: {itemType, image, description}
+            data: {itemType, category, image, description, price}
         });
     }
 

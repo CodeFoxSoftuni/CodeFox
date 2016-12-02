@@ -3,8 +3,8 @@ class OffersModel {
         this.requester = requester;
     }
 
-    create(itemType, image, description) {
-        return this.requester.createClothAdv(itemType, image, description);
+    create(itemType, category, image, description, price) {
+        return this.requester.createClothAdv(itemType, category, image, description, price);
     }
 
     viewDetailed(){

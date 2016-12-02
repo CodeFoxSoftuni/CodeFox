@@ -35,9 +35,7 @@ class App extends Component {
 
         let offersModel = new OffersModel(DatabaseRequester);
         let createOfferView = new CreateOffer();
-        console.dir(offersModel);
         this.offerController = new OfferController(offersModel, createOfferView, this);
-        console.dir(this.offerController)
         this.state = {
             username: sessionStorage.getItem('username'),
             userId: sessionStorage.getItem('userId'),

@@ -6,9 +6,9 @@ import LoginView from './loginView';
 import $ from 'jquery';
 
 export default class UserView {
-    constructor() {
-
-    }
+    // constructor() {
+    //
+    // }
 
     showHomeView() {
         ReactDOM.render(<HomeView />,

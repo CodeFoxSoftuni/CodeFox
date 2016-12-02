@@ -5,14 +5,12 @@ class OfferController {
         this.app = app;
     }
 
-    createOffer(itemType, image, description) {
-        console.log(this.model);
-        this.model.create(itemType, image, description) //FIXED: here model == undefined, when create offer is clicked.
+    createOffer(itemType, category, image, description, price) {
+        this.model.create(itemType, category, image, description, price)
             .then(registerSuccess.bind(this));
-
-        function registerSuccess(response) {
-            this.view.showHomeView(); // TODO: Navigate to details page for this offer
-            this.view.showInfo("Offer created successfully.");
+        function registerSuccess() {
+            this.app.showAllOffersView(); // TODO: returns Exeption this.app.showAllOffersView() is not a function
+            this.app.showInfo("Offer created successfully."); // TODO: Not working
         }
     }
 }

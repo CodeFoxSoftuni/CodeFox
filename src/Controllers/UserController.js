@@ -19,6 +19,7 @@ class UserController {
     loginUser(username, password) {
         this.model.login(username, password)
             .then(loginSuccess.bind(this));
+        console.log(this)
 
         function loginSuccess(userInfo) {
             this.view.showHomeView();

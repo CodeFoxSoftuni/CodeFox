@@ -1,19 +1,21 @@
 import React, {Component} from 'react';
-import $ from 'jquery'
+
 
 export default class CreateOffer extends Component {
     constructor(props) {
         super(props);
-        this.state = {file: '',
+        this.state = {
+            itemType: 'Bras', // Set on bras, because it is the first item in the list, and if user does not change the list itemType will be empty
+            category: 'Lingerie',
             imagePreviewUrl: '',
-            itemType: 'bras', // Set on bras, because it is the first item in the list, and if user does not change the list itemType will be empty
-            description: ''
+            description: '',
+            price: ''
         };
     }
 
     submitForm(e) {
         e.preventDefault();
-        this.props.onsubmit(this.state.itemType, this.state.description, this.state.imagePreviewUrl);
+        this.props.onsubmit(this.state.itemType, this.state.category,this.state.imagePreviewUrl, this.state.description, this.state.description, this.state.price);
     }
     _handleImageChange(e) {
         e.preventDefault();
@@ -81,18 +83,31 @@ export default class CreateOffer extends Component {
                                 <option value="ballerinas">Ballerinas</option>
                             </optgroup>
                         </select>
-                        <div className="stepHeading">Step 2: Upload Image</div>
+                        <div className="stepHeading">Step 2: Choose a category</div>
+                        <select className="selectGroup"
+                                name="itemType" onChange={this.handleChange.bind(this)}>
+                                <option value="Lingerie">Lingerie</option>
+                                <option value="Bottoms">Bottoms</option>
+                                <option value="Shoes">Shoes</option>
+                                <option value="Shirts-Blouses-Sweaters">Shirts, Blouses, Sweaters</option>
+                                <option value="Sport-wear">Sport wear</option>
+                        </select>
+                        <div className="stepHeading">Step 3: Upload Image</div>
                         <div className="previewComponent">
                             <form /*onSubmit={(e)=>this.submitForm(e)}*/>
                                 <input className="fileInput" type="file" onChange={(e)=>this._handleImageChange(e)} />
                             </form>
                             <div className="imgPreview" >{$imagePreview}</div>
                         </div>
-                        <div className="stepHeading">Step 3: Add Description</div>
+                        <div className="stepHeading">Step 4: Add Description</div>
                         <textarea className='autoExpand' rows='3' data-min-rows='3'
                                   name="description" onChange={this.handleChange.bind(this)}></textarea>
+                        <div className="stepHeading">Step 5: Add Price</div>
+                        <textarea className='autoExpand' rows='3' data-min-rows='3'
+                                  name="description" onChange={this.handleChange.bind(this)}></textarea>
+                        <div></div>
                         <button type="submit" className="btn btn--right"
-                               /* onClick={this.submitForm.bind(this)}*/>Create</button>
+                             onClick={this.submitForm.bind(this)}>Create</button>
                     </form>
                 </div>
             </div>
