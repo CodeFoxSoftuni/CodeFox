@@ -8,9 +8,12 @@ import AllOffersGrid from './Views/allOffers';
 import FullOffer from './Views/fullOfferView';
 import MyAccount from './Views/myAccount';
 
+
 import UserController from './Controllers/UserController';
 import UserModel from './Models/UsersModel';
 import UserView from './Views/UserView';
+import AboutTheTeam from './Views/aboutTheTeam';
+
 
 import OfferController from './Controllers/OfferController';
 import OffersModel from './Models/OffersModel';
@@ -20,7 +23,8 @@ import './App.css';
 import './Styles/Forms-Styles.css';
 import './Styles/allOffers-Styles.css';
 import './Styles/createOffer-Styles.css';
-import './Styles/myAccount-Style.css'
+import './Styles/myAccount-Style.css';
+import './Styles/aboutTheTeam-Styles.css';
 
 import DatabaseRequester from './Utils/DatabaseRequester';
 import $ from 'jquery';
@@ -62,7 +66,7 @@ class App extends Component {
                 <div className="parallax"></div>
                 <div className="parallax-next"></div>
                 <Footer
-                    aboutTeam=""
+                    aboutTheTeamClicked={this.showAboutTheTeamView.bind(this)}
                 />
             </div>
         );
@@ -108,6 +112,10 @@ class App extends Component {
 
     clickOffer() {
         this.showView(<FullOffer/>);
+    }
+
+    showAboutTheTeamView(){
+        this.showView(<AboutTheTeam/>);
     }
 
     showAllOffersView(response) {

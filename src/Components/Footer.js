@@ -8,7 +8,7 @@ export default class Footer extends Component {
             <footer className="footer">
                 CodeFox© {dateYear}
                 <footer id="hiddenFooter">
-                    <a href="#" className="footer-link" onClick={this.props.aboutTeam}>About The Team</a>
+                    <a href="#" className="footer-link" onClick={this.props.aboutTheTeamClicked}>About The Team</a>
                     <div className="footer-link">Contacts</div>
                 </footer>
             </footer>

@@ -118,7 +118,6 @@ input, textarea, select, a { outline: none; }
     background: -webkit-linear-gradient(top,#333, #1e1e1e);
 }
 .imgPreview{
-    align-content: center;
     transform: scale(0.3, 0.3);
     -ms-transform: scale(0.3, 0.3);
     -webkit-transform: scale(0.3, 0.3);
