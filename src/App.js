@@ -1,22 +1,13 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+import {Link} from 'react-router';
 
 import Footer from './Components/Footer'
 import Header from './Components/Header';
-import HomeView from './Views/homeView';
-import AllOffersGrid from './Views/allOffers';
-import FullOffer from './Views/fullOfferView';
-import MyAccount from './Views/myAccount';
 
-import UserController from './Controllers/UserController';
-import UserModel from './Models/UsersModel';
-import UserView from './Views/UserView';
-import AboutTheTeam from './Views/aboutTheTeam';
+import InfoBox from './Components/Infobox';
+import Navbar from './Components/Navbar';
 
-import OfferController from './Controllers/OfferController';
-import OffersModel from './Models/OffersModel';
-import CreateOffer from './Views/createOfferView';
-import DetailedOffer from './Components/DetailedOffer';
+import observer from './model/observer';
 
 import './App.css';
 import './Styles/Forms-Styles.css';
@@ -25,131 +16,69 @@ import './Styles/createOffer-Styles.css';
 import './Styles/myAccount-Style.css'
 import './Styles/aboutTheTeam-Styles.css'
 
-import DatabaseRequester from './Utils/DatabaseRequester';
 import $ from 'jquery';
 
 class App extends Component {
     constructor(props) {
         super(props);
 
-        let userModel = new UserModel(DatabaseRequester);
-        let userView = new UserView();
-        this.userController = new UserController(userModel, userView, this);
+        this.state = { loggedIn: false, username: '' };
+        observer.onSessionUpdate = this.onSessionUpdate.bind(this);
+    }
 
-        let offersModel = new OffersModel(DatabaseRequester);
-        let createOfferView = new CreateOffer();
-        this.offerController = new OfferController(offersModel, createOfferView, this);
-        this.state = {
-            username: sessionStorage.getItem('username'),
-            userId: sessionStorage.getItem('userId'),
+    onSessionUpdate() {
+        let name = sessionStorage.getItem("username");
+        if (name) {
+            this.setState({ loggedIn: true, username: sessionStorage.getItem("username") });
+        } else {
+            this.setState({ loggedIn: false, username: '' });
         }
     }
 
     render() {
+        let navbar = {};
+        if (!this.state.loggedIn) {
+            navbar = (
+                <Navbar>
+                    <Link to="/" className="nav-bar-link" onlyActiveOnIndex={true}>Home</Link>
+                    <Link to="/login" className="nav-bar-link">Login</Link>
+                    <Link to="/register" className="nav-bar-link">Register</Link>
+                    <Link to="/offers" className="nav-bar-link">All offers</Link>
+                </Navbar>
+            );
+        } else {
+            navbar = (
+                <Navbar>
+                    <Link to="/" className="nav-bar-link" onlyActiveOnIndex={true}>Home</Link>
+                    <Link to="/offers" className="nav-bar-link">All offers</Link>
+                    <div className="nav-bar-link" id="helloUser">Hello, {this.state.username}!
+                        <ul>
+                            <li><Link to="/account" className="nav-bar-link">My Account</Link></li>
+                            <li><Link to="/create" className="nav-bar-link">Create Offer</Link></li>
+                            <li><a href="#" className="nav-bar-link">My Offers</a></li>
+                            <li><Link to="/logout" className="nav-bar-link">Logout</Link></li>
+                        </ul>
+                    </div>
+                </Navbar>
+            );
+        }
         return (
             <div className="App">
-                <div>
-                    <header>
-                        <Header
-                            username={this.state.username}
-                            homeClicked={this.showHomeView.bind(this)}
-                            loginClicked={this.userController.loadLoginView.bind(this.userController)}
-                            registerClicked={this.userController.loadRegisterView.bind(this.userController)}
-                            allOffersClicked={this.offerController.loadOffers.bind(this.offerController)}
-                            logoutClicked={this.userController.logoutUser.bind(this.userController)}
-                            createOfferClicked={this.showCreateOfferView.bind(this)}
-                            myAccountClicked={this.showMyAccountView.bind(this)}
-                        />
-                        <div id="infoBox"></div>
-                    </header>
-                    <div className="parallax">
-                        <main id="main"></main>
-                    </div>
-                </div>
-                <Footer
-                    aboutTheTeamClicked={this.showAboutTheTeamView.bind(this)}
-                />
+                <Header username={this.state.username}>
+                    {navbar}
+                </Header>
+                <main id="main"></main>
+                {this.props.children}
+                <Footer/>
+                <InfoBox/>
             </div>
         )
     }
 
-    showView(component) {
-        ReactDOM.render(component,
-            document.getElementById('main'));
-    }
-
-    showHomeView() {
-        this.showView(<HomeView/>);
-    }
-
-    handleAjaxError(event, response) {
-        let errorMsg = JSON.stringify(response);
-        if (response.readyState === 0)
-            errorMsg = "Cannot connect due to network error.";
-        if (response.responseJSON && response.responseJSON.description)
-            errorMsg = response.responseJSON.description;
-        this.showError(errorMsg);
-    }
-
-    showError(errorMessage) {
-        $('#infoBox').css('color', 'red');
-        $('#infoBox').text(errorMessage).show();
-        setTimeout(function () {
-            $('#infoBox').fadeOut();
-        }, 3000);
-    }
-
-    saveAuthInSession(userInfo) {
-        sessionStorage.setItem('authToken', userInfo._kmd.authtoken);
-        sessionStorage.setItem('userId', userInfo._id);
-        sessionStorage.setItem('username', userInfo.username);
-
-        // This will update the entire app UI (e.g. the navigation bar)
-        this.setState({
-            username: userInfo.username,
-            userId: userInfo._id
-        });
-    }
-
-    showAboutTheTeamView(){
-        this.showView(<AboutTheTeam/>);
-    }
-
-    showAllOffersView(response) {
-        this.showView(<AllOffersGrid
-            offers={response}
-            details={this.offerController.loadSingleOffer.bind(this.offerController)}
-            listByCategory={this.offerController.loadOffers.bind(this.offerController)}
-        />);
-    }
-
-    showDetailedOffer(response) {
-        this.showView(<DetailedOffer details={response}/>)
-    }
-
-    showCreateOfferView() {
-        this.showView(<CreateOffer onsubmit={this.offerController.createOffer.bind(this.offerController)}/>); // Here we implement the onsubmit property and pass it to OfferController
-    }
-
-    showMyAccountView() {
-        this.showView(<MyAccount/>);
-    }
-
-
     componentDidMount() {
+        this.onSessionUpdate();
         let divHeight = Number($('#header-wrap').height()) / 16;
-        let info = $('#infoBox');
-        info.css('color', 'orange');
-        $(document).ajaxStart(function () {
-            info.text("Loading...");
-            info.show();
-        });
-        $(document).ajaxStop(function () {
-            info.hide();
-        });
         $('#main').css('margin-top', divHeight + 'em');
-        this.showHomeView();
-        $(document).ajaxError(this.handleAjaxError.bind(this));
         $(document)
             .one('focus.autoExpand', 'textarea.autoExpand', function () {
                 var savedValue = this.value;
@@ -165,6 +94,5 @@ class App extends Component {
             });
     }
 }
-
 
 export default App;
