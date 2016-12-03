@@ -1,5 +1,5 @@
 import requester from './requester';
-import observer from './observer';
+//import observer from './observer';
 
 const offer = (function () {
     function create(itemType, category, image, description, price) {

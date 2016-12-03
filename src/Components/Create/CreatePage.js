@@ -63,7 +63,7 @@ export default class CreatePage extends Component {
         let {imagePreviewUrl} = this.state;
         let $imagePreview = null;
         if (imagePreviewUrl) {
-            $imagePreview = (<img src={imagePreviewUrl} className="preview" />);
+            $imagePreview = (<img src={imagePreviewUrl} className="preview" alt="Preview" />);
         } else {
             $imagePreview = (<div className="previewText"></div>);
         }

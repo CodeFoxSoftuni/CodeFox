@@ -6,7 +6,7 @@ export default class MyAccount extends Component {
             <div>
                 <div className="myAccount">
                     <section className="profile-photo">
-                        <img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="user-photo" width="100%"></img>
+                        <img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="user" width="100%"></img>
                     </section>
                     <section>
                         <span className="account-list">
