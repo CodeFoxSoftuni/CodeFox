@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
-.singleOffer {
+.detailed-offer {
     padding: 0.63em;
     text-align: center;
     font-family: "Josefin Sans", sans-serif;
@@ -7,7 +7,7 @@
     left:0;
     right:0;
     width: 70em;
-    height: 20em;
+    height: 30em;
     margin:5em auto;
     background: rgba(130,130,130,.3);
     padding: 1.25em  1.38em;
@@ -18,16 +18,39 @@
     border-right-color: rgba(60,60,60,.4);
     overflow:hidden;
 }
-.singleOffer-image {
+.detailed-offer h1 {
+    float: left;
+    position: relative;
+}
+.detailed-offer-image {
+    position: absolute;
+    float: left;
+    width: 25em;
+    height: 25em;
+    margin-top: 7%;
+    margin-left: 7%;
+}
+
+.detailed-offer-info {
+    float: right;
+    left: 20%;
+    margin-top: 6%;
+    margin-right: 15%;
+}
+.detailed-offer-info div {
+    padding: 5px;
+    text-align: left;
+    font-size: 25px;
+}
+.detailed-offer-description {
+    float: right;
     position: fixed;
-    margin-right: 90%;
+    margin-top: 15%;
+    margin-left: 50%;
 }
-.singleOffer-info {
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+.detailed-offer-description textarea {
+    width: 15em;
+    height: 9em;
+    resize: none;
 }
-.singleOffer-info span {
-    padding: 40px;
-}
+

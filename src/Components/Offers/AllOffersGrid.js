@@ -23,7 +23,7 @@ export default class AllOffersGrid extends React.Component {
                 <section id="center">
                     {this.props.offers.map((item, index) => {
                         return (
-                            <div className="offer" key={index}>
+                            <div className="all-offers" key={index}>
                             <SingleOffer
                                          image={item.image}
                                          category={item.category}

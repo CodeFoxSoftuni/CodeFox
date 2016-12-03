@@ -55,8 +55,8 @@ export default class CreateForm extends Component {
                 <textarea className='autoExpand' rows='3' data-min-rows='3'
                           name="description" onChange={this.props.onChange}></textarea>
                 <div className="stepHeading">Step 5: Add Price</div>
-                <textarea className='autoExpand' rows='3' data-min-rows='3'
-                          name="price" onChange={this.props.onChange}></textarea>
+                <input type="number" className='autoExpand' min={0} data-min-rows='3'
+                          name="price" onChange={this.props.onChange}></input>
                 <div></div>
                 <button type="submit" className="btn btn--right">Create</button>
             </form>

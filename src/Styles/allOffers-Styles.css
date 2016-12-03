@@ -7,10 +7,10 @@
 
 .categoriesMenu {
     background: #333;
-    position: static;
+    position: fixed;
     float: left;
     height: 100%;
-    overflow:auto;
+    overflow:hidden;
     color: orange;
     font-family: "Josefin Sans", sans-serif;
     font-size: 16pt;
@@ -39,7 +39,7 @@
     vertical-align:top;
     display:table;
 }
-.offer{
+.all-offers{
     color: darkslategray;
     background: white;
     align-content: center;
