@@ -32,6 +32,8 @@ html, body {
     text-align: center;
     padding: 0.63em;
     border-radius:  0.19em;
-    display: none;
     z-index: 101;
+}
+#infoBox.error {
+    color: red;
 }
