@@ -14,7 +14,8 @@ import './Styles/Forms-Styles.css';
 import './Styles/allOffers-Styles.css';
 import './Styles/createOffer-Styles.css';
 import './Styles/myAccount-Style.css'
-import './Styles/aboutTheTeam-Styles.css'
+import './Styles/aboutTheTeam-Styles.css';
+import './Styles/contacts-Styles.css';
 
 import $ from 'jquery';
 

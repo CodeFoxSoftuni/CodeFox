@@ -10,7 +10,7 @@ export default class Footer extends Component {
                 CodeFox© {dateYear}
                 <footer id="hiddenFooter">
                     <Link to="/about" className="footer-link">About The Team</Link>
-                    <div className="footer-link">Contacts</div>
+                    <Link to="/contacts" className="footer-link">Contacts</Link>
                 </footer>
             </footer>
         );

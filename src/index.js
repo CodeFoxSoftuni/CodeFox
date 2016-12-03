@@ -13,6 +13,7 @@ import DetailedOffer from './Components/Offers/DetailedOffer';
 import CreatePage from './Components/Create/CreatePage';
 import Category from './Components/Offers/CategoryPage';
 import About from './Components/About/AboutPage';
+import Contacts from './Components/About/ContactsPage';
 
 ReactDOM.render(
     <Router history={browserHistory}>
@@ -21,6 +22,7 @@ ReactDOM.render(
             <Route path="login" component={Login}/>
             <Route path="register" component={Register}/>
             <Route path="about" component={About}/>
+            <Route path="contacts" component={Contacts}/>
             <Route path="offers">
                 <IndexRoute component={Offers}/>
                 <Route path=":offerId" component={DetailedOffer}/>
