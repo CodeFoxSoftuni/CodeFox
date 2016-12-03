@@ -1,5 +1,5 @@
 #members-container{
-    display: inline-block;
+    display: table;
     text-align: center;
     font-family: "Josefin Sans", sans-serif;
     height: auto;
@@ -17,9 +17,9 @@
     border-bottom-color: rgba(60,60,60,.4);
     border-right-color: rgba(60,60,60,.4);
     overflow: auto;
-    align-content: center;
 }
 .member {
+    display-inside: table;
     margin-left:1em;
     align-content: center;
     text-decoration: none;

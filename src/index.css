@@ -2,5 +2,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: none;
+  background: url('http://www.psdgraphics.com/file/2016/simple-geometric-design.png');
+  background-size: 100%;
 }
