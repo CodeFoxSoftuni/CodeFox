@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import LoginForm from './LoginForm';
-import User from '../../Models/user';
+import User from '../../model/user';
 
 export default class LoginPage extends Component {
     constructor(props) {

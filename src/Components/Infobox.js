@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
-import observer from '../Models/observer';
+import observer from '../model/observer';
 
 
 export default class Infobox extends Component {

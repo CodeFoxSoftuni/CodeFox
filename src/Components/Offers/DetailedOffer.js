@@ -1,5 +1,5 @@
 import React from 'react';
-import Offer from '../../Models/offer';
+import Offer from '../../model/offer';
 import '../../Styles/detailOffer-Style.css'
 
 class DetailedOffer extends React.Component {

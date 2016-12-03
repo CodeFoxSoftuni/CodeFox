@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Offer from '../../Models/offer';
+import Offer from '../../model/offer';
 import AllOffersGrid from './AllOffersGrid';
 export default class OffersPage extends Component {
     constructor(props) {

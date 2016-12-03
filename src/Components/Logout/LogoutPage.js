@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import user from '../../Models/user';
+import user from '../../model/user';
 
 export default class LogoutPage extends Component {
     constructor(props) {

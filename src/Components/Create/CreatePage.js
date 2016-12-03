@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Offer from '../../Models/offer';
-import observer from '../../Models/observer';
+import Offer from '../../model/offer';
+import observer from '../../model/observer';
 import CreateForm from './CreateForm';
 
 
