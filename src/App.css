@@ -5,13 +5,10 @@ html, body {
 #main {
     font-family: "Open Sans Condensed", sans-serif;
 }
-.parallax {
-    perspective: 1px;
+.dynamic-container {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    background-image: url(http://all4desktop.com/data_images/original/4238051-background.jpg);
-    z-index: -100;
 }
 
 #infoBox {

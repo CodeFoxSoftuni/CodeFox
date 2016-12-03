@@ -67,8 +67,10 @@ class App extends Component {
                 <Header username={this.state.username}>
                     {navbar}
                 </Header>
+                <div className="dynamic-container">
                 <main id="main"></main>
                 {this.props.children}
+                </div>
                 <Footer/>
                 <InfoBox/>
             </div>
