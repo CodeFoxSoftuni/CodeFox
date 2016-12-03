@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router';
 import '../Styles/Footer-Styles.css'
 
 export default class Footer extends Component {
@@ -8,7 +9,7 @@ export default class Footer extends Component {
             <footer className="footer">
                 CodeFox© {dateYear}
                 <footer id="hiddenFooter">
-                    <a href="#" className="footer-link" onClick={this.props.aboutTheTeamClicked}>About The Team</a>
+                    <Link to="/about" className="footer-link">About The Team</Link>
                     <div className="footer-link">Contacts</div>
                 </footer>
             </footer>
