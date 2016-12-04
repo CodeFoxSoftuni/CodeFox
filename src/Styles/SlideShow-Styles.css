@@ -1,5 +1,9 @@
 .slideshow-container {
     height: auto;
+    left:0;
+    right:0;
+    bottom: 0;
+    top:0;
     position: relative;
 }
 .numberText {

@@ -1,12 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 
 .container {
+    height: auto;
     text-align: center;
     font-family: "Josefin Sans", sans-serif;
-    position: fixed;
+    position: relative;
+    top:0;
     left:0;
     right:0;
-    bottom: 1em;
     width: 31.25em;
     margin:5em auto;
     background: rgba(130,130,130,.3);

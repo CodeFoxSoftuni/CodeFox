@@ -69,7 +69,8 @@ class App extends Component {
                     {navbar}
                 </Header>
                 <div className="dynamic-container">
-                <main id="main"></main>
+                <main id="main">
+                </main>
                 {this.props.children}
                 </div>
                 <Footer/>

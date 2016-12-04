@@ -37,6 +37,9 @@ class DetailedOffer extends React.Component {
                     <div>
                         <span className="offerPrice">Description: {this.state.details.description}</span>
                     </div>
+                    <div>
+                        <button id='buyBtn' type="submit" disabled={this.props.submitDisabled}>Buy</button>
+                    </div>
                 </section>
             </div>
         )

@@ -7,6 +7,8 @@
     position: fixed;
     left:0;
     right:0;
+    bottom: 0;
+    top:0;
     width: 70em;
     height: 30em;
     margin:5em auto;
@@ -24,11 +26,11 @@
 }
 .detailed-offer-image {
     position: absolute;
-    float: left;
-    width: 25em;
-    height: 25em;
-    margin-top: 7%;
-    margin-left: 7%;
+    transform: scale(2, 2);
+    -ms-transform: scale(2, 2);
+    -webkit-transform: scale(2, 2);
+    margin-top: 10%;
+    margin-left: 30%;
 }
 
 .detailed-offer-info {
@@ -38,9 +40,9 @@
     margin-right: 15%;
 }
 .detailed-offer-info div {
-    padding: 5px;
+    padding: 0.3em;
     text-align: left;
-    font-size: 25px;
+    font-size:  1.56em;
 }
 .detailed-offer-description {
     float: right;
@@ -54,3 +56,17 @@
     resize: none;
 }
 
+#buyBtn {
+    width: 8em;
+    height:2em;
+    color: orange;
+    letter-spacing: .05em;
+    text-shadow: 0 0.06em 0 #133d3e;
+    text-transform: uppercase;
+    background: #225556;
+    border-top-color: #9fb5b5;
+    border-left-color: #608586;
+    border-bottom-color: #1b4849;
+    border-right-color: #1e4d4e;
+    cursor: pointer;
+}
