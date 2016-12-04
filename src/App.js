@@ -82,12 +82,12 @@ class App extends Component {
         let images = [
             "http://bit.ly/2goQGmm",
             "http://bit.ly/2gD1Dn9",
-            "http://bit.ly/2gQ7l2Q",
+            "http://insd.vasyaa.com/templates/ammedical/images/services/Fashion%20Styling.jpg",
             "http://www.magic4walls.com/wp-content/uploads/2014/03/fashion-model-grass-pier-photography-sunset-hd-wallpaper.jpg",
             "http://images.forwallpaper.com/files/images/9/9e5c/9e5c8958/437085/eva-padberg.jpg",
             "http://p1.pichost.me/i/13/1364007.jpg",
             "https://images3.alphacoders.com/232/thumb-1920-232907.jpg",
-            "http://www.hdwallpapersnews.com/wp-content/uploads/2015/02/Men-Fashion-1920x1080-HD-Wallpaper.jpg"
+            "http://insd.vasyaa.com/templates/ammedical/images/services/Fashion%20Styling.jpg"
         ];
         let  i = 0;
         setInterval(function() {

@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 .detailed-offer {
+    color:white;
     padding: 0.63em;
     text-align: center;
     font-family: "Josefin Sans", sans-serif;
@@ -19,7 +20,6 @@
     overflow:hidden;
 }
 .detailed-offer h1 {
-    float: left;
     position: relative;
 }
 .detailed-offer-image {

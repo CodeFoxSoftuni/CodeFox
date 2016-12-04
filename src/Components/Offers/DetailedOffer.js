@@ -32,14 +32,11 @@ class DetailedOffer extends React.Component {
                         <span>Type: {this.state.details.itemType}</span>
                     </div>
                     <div>
-                        <span className="offerPrice">Cost: {this.state.details.price}$</span>
+                        <span className="offerPrice">Cost: {this.state.details.price}</span>
                     </div>
                     <div>
-                        <span>Description:</span>
+                        <span className="offerPrice">Description: {this.state.details.description}</span>
                     </div>
-                </section>
-                <section className="detailed-offer-description">
-                    <textarea value={this.state.details.description}></textarea>
                 </section>
             </div>
         )
