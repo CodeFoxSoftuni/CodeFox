@@ -1,7 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
+body{
+    background: url(http://bit.ly/2goQGmm);
+    background-size: 100%;
+}
 #container{
+    height: auto;
     color: darkslategray;
-    height:80em;
     font-family: "Josefin Sans", sans-serif;
 }
 
@@ -36,6 +40,7 @@
     background: #333;
 }
 #center{
+    padding-left: 2em;
     vertical-align:top;
     display:table;
 }
@@ -83,6 +88,7 @@
     color: darkslategray;
     width:auto;
     min-width:4em;
+    height: 9.9em;
     background: rgb(237, 235, 230);
     float:right;
     text-align: center;

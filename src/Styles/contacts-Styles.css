@@ -9,7 +9,6 @@
     height: 20em;
     margin:5em auto;
     background: rgba(130,130,130,.3);
-    padding: 1.25em  1.38em;
     border:  0.06em solid;
     border-top-color: rgba(255,255,255,.4);
     border-left-color: rgba(255,255,255,.4);
@@ -18,17 +17,21 @@
     overflow:hidden;
 }
 .contacts-container h1 {
-    float: left;
+    padding:0.06em;
+    color:white;
     position: relative;
 }
 .contacts-info {
+    text-align: center;
     float: inherit;
     position: absolute;
     left: 20%;
     top: 20%;
+    color:white;
 }
 .contacts-info div {
-    padding: 10px;
-    margin-top: 10px;
+    text-decoration: none;
+    padding: 0.06em;
+    margin-top: 0.06em;
     text-align: left;
 }

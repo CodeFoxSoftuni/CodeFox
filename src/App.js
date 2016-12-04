@@ -79,18 +79,36 @@ class App extends Component {
     }
 
     componentDidMount() {
+        let images = [
+            "http://bit.ly/2goQGmm",
+            "http://bit.ly/2gD1Dn9",
+            "http://bit.ly/2gQ7l2Q",
+            "http://www.magic4walls.com/wp-content/uploads/2014/03/fashion-model-grass-pier-photography-sunset-hd-wallpaper.jpg",
+            "http://images.forwallpaper.com/files/images/9/9e5c/9e5c8958/437085/eva-padberg.jpg",
+            "http://p1.pichost.me/i/13/1364007.jpg",
+            "https://images3.alphacoders.com/232/thumb-1920-232907.jpg",
+            "http://www.hdwallpapersnews.com/wp-content/uploads/2015/02/Men-Fashion-1920x1080-HD-Wallpaper.jpg"
+        ];
+        let  i = 0;
+        setInterval(function() {
+            $('body').css("background", "url(" + images[i] + ")");
+            i = i + 1;
+            if (i == images.length) {
+                i =  0;
+            }
+        }, 6100);
         this.onSessionUpdate();
         let divHeight = Number($('#header-wrap').height()) / 16;
         $('#main').css('margin-top', divHeight + 'em');
         $(document)
             .one('focus.autoExpand', 'textarea.autoExpand', function () {
-                var savedValue = this.value;
+                let savedValue = this.value;
                 this.value = '';
                 this.baseScrollHeight = this.scrollHeight;
                 this.value = savedValue;
             })
             .on('input.autoExpand', 'textarea.autoExpand', function () {
-                var minRows = this.getAttribute('data-min-rows') | 0, rows;
+                let minRows = this.getAttribute('data-min-rows') | 0, rows;
                 this.rows = minRows;
                 rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 17);
                 this.rows = minRows + rows;
