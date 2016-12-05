@@ -14,7 +14,8 @@ const user = (function () {
     }
 
     function register(username, password, callback) {
-        requester.registerUser(username, password).then(registerSuccess);
+        requester.registerUser(username, password).then(registerSuccess)
+            .catch((err) => callback(false));
 
         function registerSuccess(userInfo) {
             observer.showSuccess('Successful registration.');
