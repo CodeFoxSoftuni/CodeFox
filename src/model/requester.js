@@ -72,25 +72,6 @@ const DatabaseRequester = (function () {
         });
     }
 
-    function findAllCars() {
-        return $.ajax({
-            method: "GET",
-            url: baseUrl + "appdata/" + appKey + "/cars",
-            headers: getKinveyUserAuthHeaders()
-        });
-    }
-    // For more categories of products add here method findAll<category>()
-    // and below a method create<category>Adv()
-
-    function createBookAdv(title, author, description) {
-        return $.ajax({
-            method: "POST",
-            url: baseUrl + "appdata/" + appKey + "/books",
-            headers: getKinveyUserAuthHeaders(),
-            data: {title, author, description}
-        });
-    }
-
     function createClothAdv(itemType, category, image, description, price) {
         return $.ajax({
             method: "POST",
@@ -100,23 +81,6 @@ const DatabaseRequester = (function () {
         });
     }
 
-    function createCarAdv(title, author, description) {
-        return $.ajax({
-            method: "POST",
-            url: baseUrl + "appdata/" + appKey + "/cars",
-            headers: getKinveyUserAuthHeaders(),
-            data: {title, author, description}
-        });
-    }
-
-    function editBook(bookId, title, author, description) {
-        return $.ajax({
-            method: "PUT",
-            url: baseUrl + "appdata/" + appKey + "/books/" + bookId,
-            headers: getKinveyUserAuthHeaders(),
-            data: {title, author, description}
-        });
-    }
 
     function deleteBook(bookId) {
         return $.ajax({
@@ -128,7 +92,7 @@ const DatabaseRequester = (function () {
 
     return {
         loginUser, registerUser, logoutUser,
-        findAllBooks, createBookAdv, findAllClothes, findSingleCloth, createClothAdv, findAllCars, createCarAdv, editBook, deleteBook
+        findAllClothes, findSingleCloth, createClothAdv, deleteBook
     }
 })();
 

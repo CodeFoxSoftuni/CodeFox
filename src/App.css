@@ -38,3 +38,11 @@ html, body {
 #infoBox.error {
     color: red;
 }
+#cart{
+    float: right;
+    position:absolute;
+    top:0.3em;
+    right:1em;
+    width:3em;
+    height:3em;
+}

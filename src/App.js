@@ -52,6 +52,9 @@ class App extends Component {
                 <Navbar>
                     <Link to="/" className="nav-bar-link" onlyActiveOnIndex={true}>Home</Link>
                     <Link to="/offers" className="nav-bar-link">All offers</Link>
+                    <Link to="/shoppingcart" >
+                        <img src="http://www.iconsdb.com/icons/preview/orange/cart-19-xxl.png" id="cart"></img>
+                    </Link>
                     <div className="nav-bar-link" id="helloUser">Hello, {this.state.username}!
                         <ul>
                             <li><Link to="/account" className="nav-bar-link">My Account</Link></li>
