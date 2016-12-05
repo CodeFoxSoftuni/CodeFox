@@ -6,7 +6,7 @@ import observer from '../model/observer';
 export default class Infobox extends Component {
     constructor(props) {
         super(props);
-        this.state ={
+        this.state = {
             message: '',
             style: 'info',
             visible: false
@@ -30,7 +30,9 @@ export default class Infobox extends Component {
         // Attach global AJAX "loading" event handlers
         $(document).on({
             ajaxStart: this.ajaxStart,
-            ajaxStop: this.hide
+            ajaxStop: (() => {
+                if (this.state.style === 'info') this.hide();
+            })
         });
 
         // Attach a global AJAX error handler
@@ -38,16 +40,11 @@ export default class Infobox extends Component {
     }
 
     ajaxStart() {
-        this.setState({ message: 'Loading...', style: 'info', visible: true });
+        this.setState({message: 'Loading...', style: 'info', visible: true});
     }
 
     hide() {
-        if(this.state.style !== 'error') {
-            this.setState({ visible: false });
-        }
-        else {
-            setTimeout(()=> {this.setState({visible: false})}, 3000)
-        }
+        this.setState({visible: false});
     }
 
     handleAjaxError(event, response) {
@@ -60,30 +57,30 @@ export default class Infobox extends Component {
     }
 
     showInfo(message) {
-        this.setState({ message: message, style: 'info', visible: true });
+        this.setState({message: message, style: 'info', visible: true});
         setTimeout(this.hide, 3000);
     }
 
     showSuccess(message) {
-        this.setState({ message: message, style: 'success', visible: true });
+        this.setState({message: message, style: 'success', visible: true});
         setTimeout(this.hide, 3000);
     }
 
     showError(errorMsg) {
-        this.setState({ message: errorMsg, style: 'error', visible: true });
-        //setTimeout(this.hide, 5000);
+        this.setState({message: errorMsg, style: 'error', visible: true});
+        setTimeout(this.hide, 5000);
     }
 
     render() {
         if (!this.state.visible) return null;
 
         let className = '';
-        if(this.state.style === 'error') {
+        if (this.state.style === 'error') {
             className = 'error';
         }
 
         return (
-            <div id="infoBox" className={className} >
+            <div id="infoBox" className={className}>
                 <span>
                     {this.state.message}
                 </span>

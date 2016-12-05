@@ -23,16 +23,16 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { loggedIn: false, username: '' };
+        this.state = {loggedIn: false, username: ''};
         observer.onSessionUpdate = this.onSessionUpdate.bind(this);
     }
 
     onSessionUpdate() {
         let name = sessionStorage.getItem("username");
         if (name) {
-            this.setState({ loggedIn: true, username: sessionStorage.getItem("username") });
+            this.setState({loggedIn: true, username: sessionStorage.getItem("username")});
         } else {
-            this.setState({ loggedIn: false, username: '' });
+            this.setState({loggedIn: false, username: ''});
         }
     }
 
@@ -52,8 +52,8 @@ class App extends Component {
                 <Navbar>
                     <Link to="/" className="nav-bar-link" onlyActiveOnIndex={true}>Home</Link>
                     <Link to="/offers" className="nav-bar-link">All offers</Link>
-                    <Link to="/shoppingcart" >
-                        <img src="http://www.iconsdb.com/icons/preview/orange/cart-19-xxl.png" id="cart"></img>
+                    <Link to="/shoppingcart">
+                        <img src="http://www.iconsdb.com/icons/preview/orange/cart-19-xxl.png" alt="cart" id="cart"></img>
                     </Link>
                     <div className="nav-bar-link" id="helloUser">Hello, {this.state.username}!
                         <ul>
@@ -71,13 +71,11 @@ class App extends Component {
                 <Header username={this.state.username}>
                     {navbar}
                 </Header>
-                <div className="dynamic-container">
-                <main id="main">
-                </main>
-                {this.props.children}
-                </div>
-                <Footer/>
                 <InfoBox/>
+                <main id="main">
+                    {this.props.children}
+                </main>
+                <Footer/>
             </div>
         )
     }
@@ -93,12 +91,12 @@ class App extends Component {
             "https://images3.alphacoders.com/232/thumb-1920-232907.jpg",
             "http://insd.vasyaa.com/templates/ammedical/images/services/Fashion%20Styling.jpg"
         ];
-        let  i = 0;
-        setInterval(function() {
+        let i = 0;
+        setInterval(function () {
             $('body').css("background", "url(" + images[i] + ")");
-            i = i + 1;
-            if (i == images.length) {
-                i =  0;
+            i += 1;
+            if (i === images.length) {
+                i = 0;
             }
         }, 6100);
         this.onSessionUpdate();

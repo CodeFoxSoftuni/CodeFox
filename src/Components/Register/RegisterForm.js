@@ -25,7 +25,7 @@ export default class RegisterForm extends Component {
         let {imagePreviewUrl} = this.state;
         let $imagePreview = null;
         if (imagePreviewUrl) {
-            $imagePreview = (<img src={imagePreviewUrl} className="preview"/>);
+            $imagePreview = (<img src={imagePreviewUrl} alt="preview" className="preview"/>);
         } else {
             $imagePreview = (<div className="previewText"></div>);
         }

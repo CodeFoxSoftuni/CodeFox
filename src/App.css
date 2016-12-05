@@ -9,12 +9,11 @@ html, body {
 }
 #main {
     font-family: "Open Sans Condensed", sans-serif;
-}
-.dynamic-container {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
 }
+
 #infoBox {
     font-family: "Josefin Sans", sans-serif;
     font-size: 1.2em;

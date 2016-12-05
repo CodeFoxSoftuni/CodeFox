@@ -91,7 +91,7 @@ const DatabaseRequester = (function () {
     }
 
     return {
-        loginUser, registerUser, logoutUser,
+        loginUser, registerUser, logoutUser, findAllBooks,
         findAllClothes, findSingleCloth, createClothAdv, deleteBook
     }
 })();
