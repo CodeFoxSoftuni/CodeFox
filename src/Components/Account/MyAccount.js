@@ -6,19 +6,19 @@ export default class MyAccount extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            imagePreviewUrl: ''
+            imagePreviewUrl: sessionStorage.getItem('userImage')
         };
         this.bindEventHandlers();
     }
-    // componentDidMount() {
-    //         Offer.editMyAccount('test')
-    //             .then(editSuccess.bind(this));
-    //
-    //         function editSuccess() {
-    //             console.log("Success");
-    //             this.context.router.push('/myAccount');
-    //         }
-    // }
+    componentDidMount() {
+            // Offer.editMyAccount('test')
+            //     .then(editSuccess.bind(this));
+            //
+            // function editSuccess() {
+            //     console.log("Success");
+            //     this.context.router.push('/myAccount');
+            // }
+    }
 
     bindEventHandlers() {
         this.submitForm = this.submitForm.bind(this);
@@ -64,12 +64,19 @@ export default class MyAccount extends Component {
     // }
 
     render() {
+        let image = null;
+        if (this.state.imagePreviewUrl) {
+            image = this.state.imagePreviewUrl;
+        }
+        else {
+            image = "https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg";
+        }
         return (
             <div>
                 <div className="myAccount">
                     <form className="login" onSubmit={this.props.onSubmit}>
                     <section className="profile-photo">
-                        <img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="user" width="100%"></img>
+                        <img src={image} alt="user" width="100%"></img>
                         <div className="previewComponent">
                             <input className="fileInput" type="file" onChange={this.props.onImageChange}/>
                             <div className="imgPreview">{this.props.imagePreview}</div>

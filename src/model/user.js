@@ -9,12 +9,14 @@ const user = (function () {
         sessionStorage.setItem('userId', userId);
         let username = userInfo.username;
         sessionStorage.setItem('username', username);
+        let userImage = userInfo.image;
+        sessionStorage.setItem('userImage', userImage);
 
         observer.onSessionUpdate();
     }
 
-    function register(username, password, callback) {
-        requester.registerUser(username, password).then(registerSuccess)
+    function register(username, password, image, callback) {
+        requester.registerUser(username, password, image).then(registerSuccess)
             .catch((err) => callback(false));
 
         function registerSuccess(userInfo) {

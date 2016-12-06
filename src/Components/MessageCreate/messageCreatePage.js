@@ -17,7 +17,7 @@ export default class messageCreatePage extends Component {
 
     bindEventHandlers() {
         this.submitForm = this.submitForm.bind(this);
-        this._handleImageChange = this._handleImageChange.bind(this);
+
         this.handleChange = this.handleChange.bind(this);
     }
 

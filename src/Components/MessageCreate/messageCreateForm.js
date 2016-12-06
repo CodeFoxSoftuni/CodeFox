@@ -11,7 +11,7 @@ export default class CreateMessageForm extends Component {
                        name="sender"
                        placeholder="Username"
                        value={this.props.username}
-                       onChange={this.props.onChangeHandler}
+                       onChange={this.props.onChange}
                        required/>
 
                 <p className="welcome">To:</p>
@@ -20,7 +20,7 @@ export default class CreateMessageForm extends Component {
                        name="receiver"
                        placeholder="Username"
                        value={this.props.username}
-                       onChange={this.props.onChangeHandler}
+                       onChange={this.props.onChange}
                        required/>
                 <div className="stepHeading">Write the message here.</div>
                 <textarea className='autoExpand' rows='3' data-min-rows='3'
