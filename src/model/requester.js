@@ -7,7 +7,6 @@ const DatabaseRequester = (function () {
     const kinveyAppAuthHeaders = {
         'Authorization': "Basic " + btoa(appKey + ":" + appSecret),
     };
-    let userId = sessionStorage.getItem('userId');
 
     function loginUser(username, password) {
         return $.ajax({
@@ -31,6 +30,10 @@ const DatabaseRequester = (function () {
         return {
             'Authorization': "Kinvey " + sessionStorage.getItem('authToken'),
         };
+    }
+
+    function getUserId() {
+        return sessionStorage.getItem('userId');
     }
 
     function logoutUser() {
@@ -92,7 +95,7 @@ const DatabaseRequester = (function () {
     }
 
     function findMyOffersOnly() {
-        let query = '?query='+ JSON.stringify({"_acl.creator":userId});
+        let query = '?query='+ JSON.stringify({"_acl.creator":getUserId()});
         return $.ajax({
             method: "GET",
             url: baseUrl + "appdata/" + appKey + '/clothes/' + query,
@@ -102,7 +105,7 @@ const DatabaseRequester = (function () {
     function editMyAccountInfo(photo) {
         return $.ajax({
             method: "PUT",
-            url: baseUrl + "user/" + appKey + '/' + userId,
+            url: baseUrl + "user/" + appKey + '/' + getUserId(),
             headers: getKinveyUserAuthHeaders(),
             data: {"photo": photo}
         });
@@ -128,7 +131,7 @@ const DatabaseRequester = (function () {
 
 
     function FindMessagesInbox() {
-        let query = '?query='+ JSON.stringify({"receiver":userId});
+        let query = '?query='+ JSON.stringify({"receiver":getUserId()});
         return $.ajax({
             method: "GET",
             url: baseUrl + "appdata/" + appKey + '/messages/' + query,
@@ -136,7 +139,7 @@ const DatabaseRequester = (function () {
         });
     }
     function FindMessagesOutbox() {
-        let query = '?query=' + JSON.stringify({"sender": userId});
+        let query = '?query=' + JSON.stringify({"sender": getUserId()});
         return $.ajax({
             method: "GET",
             url: baseUrl + "appdata/" + appKey + '/messages/' + query,

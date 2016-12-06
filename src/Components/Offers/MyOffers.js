@@ -14,7 +14,6 @@ export default class MyOffers extends Component {
 
     loadOffersSuccess(response) {
         this.setState({offers: response});
-        console.log(response)
     }
 
 

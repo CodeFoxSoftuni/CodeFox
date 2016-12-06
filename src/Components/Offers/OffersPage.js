@@ -20,7 +20,9 @@ export default class OffersPage extends Component {
         return (
             <div>
                 <AllOffersGrid
-                    offers={this.state.offers}/>
+                    offers={this.state.offers}
+                    renderCategory={Offer.loadOffers}
+                />
             </div>
         )
     }
