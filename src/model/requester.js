@@ -32,6 +32,10 @@ const DatabaseRequester = (function () {
         };
     }
 
+    function getUserId() {
+        return sessionStorage.getItem('userId');
+    }
+
     function logoutUser() {
         return $.ajax({
             method: "POST",
@@ -91,10 +95,7 @@ const DatabaseRequester = (function () {
     }
 
     function findMyOffersOnly() {
-        let userId = sessionStorage.getItem('userId');
-        let query = '?query='+ JSON.stringify({"_acl.creator":userId});
-        console.log(userId)
-        console.log(JSON.stringify({"_acl.creator":userId}))
+        let query = '?query='+ JSON.stringify({"_acl.creator":getUserId()});
         return $.ajax({
             method: "GET",
             url: baseUrl + "appdata/" + appKey + '/clothes/' + query,
@@ -102,10 +103,9 @@ const DatabaseRequester = (function () {
         });
     }
     function editMyAccountInfo(photo) {
-        let userId = sessionStorage.getItem('userId');
         return $.ajax({
             method: "PUT",
-            url: baseUrl + "user/" + appKey + '/' + userId,
+            url: baseUrl + "user/" + appKey + '/' + getUserId(),
             headers: getKinveyUserAuthHeaders(),
             data: {"photo": photo}
         });
@@ -131,7 +131,7 @@ const DatabaseRequester = (function () {
 
 
     function FindMessagesInbox() {
-        let query = '?query='+ JSON.stringify({"receiver":userId});
+        let query = '?query='+ JSON.stringify({"receiver":getUserId()});
         return $.ajax({
             method: "GET",
             url: baseUrl + "appdata/" + appKey + '/messages/' + query,
@@ -139,7 +139,7 @@ const DatabaseRequester = (function () {
         });
     }
     function FindMessagesOutbox() {
-        let query = '?query=' + JSON.stringify({"sender": userId});
+        let query = '?query=' + JSON.stringify({"sender": getUserId()});
         return $.ajax({
             method: "GET",
             url: baseUrl + "appdata/" + appKey + '/messages/' + query,
