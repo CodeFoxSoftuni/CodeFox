@@ -16,6 +16,9 @@ import About from './Components/About/AboutPage';
 import Contacts from './Components/About/ContactsPage';
 import MyOffers from './Components/Offers/MyOffers';
 import Cart from './Components/Cart/Cart';
+import MyMessages from './Components/Messages/InboxMessagePage'
+import SendMessage from './Components/MessageCreate/messageCreatePage';
+
 
 ReactDOM.render(
     <Router history={browserHistory}>
@@ -29,6 +32,8 @@ ReactDOM.render(
                 <IndexRoute component={Offers}/>
                 <Route path=":offerId" component={DetailedOffer}/>
             </Route>
+            <Route path="messages" component={MyMessages}/>
+            <Route path="sendMsg" component={SendMessage}/>
             <Route path="category/:categoryName" component={Category}/>
             <Route path="create" component={CreatePage}/>
             <Route path="logout" component={Logout}/>

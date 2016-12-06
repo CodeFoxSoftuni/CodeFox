@@ -108,9 +108,45 @@ const DatabaseRequester = (function () {
         });
     }
 
+    // messages
+    function createMessage(sender,receiver,message) {
+        return $.ajax({
+            method: "POST",
+            url: baseUrl + "appdata/" + appKey + "/messages",
+            headers: getKinveyUserAuthHeaders(),
+            data: {sender,receiver,message}
+        });
+    }
+
+    function findSingleMessage(id) {
+        return $.ajax({
+            method: "GET",
+            url: baseUrl + "appdata/" + appKey + "/messages/" + id,
+            headers: getKinveyUserAuthHeaders()
+        });
+    }
+
+
+    function FindMessagesInbox() {
+        let query = '?query='+ JSON.stringify({"receiver":userId});
+        return $.ajax({
+            method: "GET",
+            url: baseUrl + "appdata/" + appKey + '/messages/' + query,
+            headers: getKinveyUserAuthHeaders()
+        });
+    }
+    function FindMessagesOutbox() {
+        let query = '?query=' + JSON.stringify({"sender": userId});
+        return $.ajax({
+            method: "GET",
+            url: baseUrl + "appdata/" + appKey + '/messages/' + query,
+            headers: getKinveyUserAuthHeaders()
+        });
+    }
+
     return {
         loginUser, registerUser, logoutUser, findAllBooks,
-        findAllClothes, findSingleCloth, createClothAdv, deleteBook, findMyOffersOnly, editMyAccountInfo
+        findAllClothes, findSingleCloth, createClothAdv, deleteBook, findMyOffersOnly, editMyAccountInfo,createMessage,findSingleMessage,FindMessagesInbox,FindMessagesOutbox
     }
 })();
 
