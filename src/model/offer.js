@@ -19,7 +19,17 @@ const offer = (function () {
         }
     }
 
-    return {create, viewDetailed, loadOffers};
+    function loadMyOffers() {
+        return requester.findMyOffersOnly();
+
+    }
+
+    function editMyAccount(photo) {
+        console.log(editMyAccount)
+        return requester.editMyAccountInfo(photo)
+    }
+
+    return {create, viewDetailed, loadOffers, loadMyOffers, editMyAccount};
 })();
 
 export default offer;

@@ -40,6 +40,7 @@ class OfferController {
             _self.app.showDetailedOffer(response);
         }
     }
+
 }
 
 export default OfferController;

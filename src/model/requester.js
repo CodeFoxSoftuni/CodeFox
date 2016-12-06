@@ -7,6 +7,7 @@ const DatabaseRequester = (function () {
     const kinveyAppAuthHeaders = {
         'Authorization': "Basic " + btoa(appKey + ":" + appSecret),
     };
+    let userId = sessionStorage.getItem('userId');
 
     function loginUser(username, password) {
         return $.ajax({
@@ -90,9 +91,26 @@ const DatabaseRequester = (function () {
         });
     }
 
+    function findMyOffersOnly() {
+        let query = '?query='+ JSON.stringify({"_acl.creator":userId});
+        return $.ajax({
+            method: "GET",
+            url: baseUrl + "appdata/" + appKey + '/clothes/' + query,
+            headers: getKinveyUserAuthHeaders()
+        });
+    }
+    function editMyAccountInfo(photo) {
+        return $.ajax({
+            method: "PUT",
+            url: baseUrl + "user/" + appKey + '/' + userId,
+            headers: getKinveyUserAuthHeaders(),
+            data: {"photo": photo}
+        });
+    }
+
     return {
         loginUser, registerUser, logoutUser, findAllBooks,
-        findAllClothes, findSingleCloth, createClothAdv, deleteBook
+        findAllClothes, findSingleCloth, createClothAdv, deleteBook, findMyOffersOnly, editMyAccountInfo
     }
 })();
 

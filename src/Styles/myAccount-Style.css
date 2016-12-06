@@ -21,6 +21,8 @@
 .profile-photo {
     float: left;
     margin-right: 90%;
+    width: 240px;
+    height: 300px;
 }
 .account-list {
     font-family: "Josefin Sans", sans-serif;

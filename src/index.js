@@ -14,6 +14,7 @@ import CreatePage from './Components/Create/CreatePage';
 import Category from './Components/Offers/CategoryPage';
 import About from './Components/About/AboutPage';
 import Contacts from './Components/About/ContactsPage';
+import MyOffers from './Components/Offers/MyOffers';
 
 ReactDOM.render(
     <Router history={browserHistory}>
@@ -31,6 +32,7 @@ ReactDOM.render(
             <Route path="create" component={CreatePage}/>
             <Route path="logout" component={Logout}/>
             <Route path="account" component={Account}/>
+            <Route path="myOffers" component={MyOffers}/>
         </Route>
     </Router>,
   document.getElementById('root')
