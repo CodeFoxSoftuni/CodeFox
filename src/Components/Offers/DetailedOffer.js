@@ -21,16 +21,18 @@ class DetailedOffer extends React.Component {
     addToLocalStorage() {
         let infoChildren = ($('.detailed-offer-info').children().children());
         let infoForStorage = {
+            id:undefined,
             category: undefined,
             type: undefined,
             price: undefined,
+            description: undefined
         };
         let innerTexts = [];
-        let i = 0;
         for (let child of infoChildren) {
             let prop = child.innerText.split(" ");
             innerTexts.push(prop[1]);
         }
+        infoForStorage.description = innerTexts[3];
         infoForStorage.category = innerTexts[0];
         infoForStorage.type = innerTexts[1];
         infoForStorage.price = innerTexts[2];
@@ -44,6 +46,7 @@ class DetailedOffer extends React.Component {
 
         cart.push(infoForStorage);
         sessionStorage.setItem('cart', JSON.stringify(cart));
+
     }
     render() {
         return (
