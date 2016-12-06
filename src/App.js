@@ -16,6 +16,7 @@ import './Styles/createOffer-Styles.css';
 import './Styles/myAccount-Style.css'
 import './Styles/aboutTheTeam-Styles.css';
 import './Styles/contacts-Styles.css';
+import './Styles/Cart-Styles.css';
 
 import $ from 'jquery';
 
@@ -52,9 +53,7 @@ class App extends Component {
                 <Navbar>
                     <Link to="/" className="nav-bar-link" onlyActiveOnIndex={true}>Home</Link>
                     <Link to="/offers" className="nav-bar-link">All offers</Link>
-                    <Link to="/shoppingcart">
-                        <img src="http://www.iconsdb.com/icons/preview/orange/cart-19-xxl.png" alt="cart" id="cart"></img>
-                    </Link>
+                    <Link to="/shoppingCart" className="nav-bar-link">Cart</Link>
                     <div className="nav-bar-link" id="helloUser">Hello, {this.state.username}!
                         <ul>
                             <li><Link to="/account" className="nav-bar-link">My Account</Link></li>
@@ -79,17 +78,9 @@ class App extends Component {
             </div>
         )
     }
-
     componentDidMount() {
         let images = [
-            "http://bit.ly/2goQGmm",
-            "http://bit.ly/2gD1Dn9",
-            "http://insd.vasyaa.com/templates/ammedical/images/services/Fashion%20Styling.jpg",
-            "http://www.magic4walls.com/wp-content/uploads/2014/03/fashion-model-grass-pier-photography-sunset-hd-wallpaper.jpg",
-            "http://images.forwallpaper.com/files/images/9/9e5c/9e5c8958/437085/eva-padberg.jpg",
-            "http://p1.pichost.me/i/13/1364007.jpg",
-            "https://images3.alphacoders.com/232/thumb-1920-232907.jpg",
-            "http://insd.vasyaa.com/templates/ammedical/images/services/Fashion%20Styling.jpg"
+            "http://fashionexprez.com/wp-content/uploads/2015/10/Latest-Street-Fashion-In-American-For-Women-2015.jpg"
         ];
         let i = 0;
         setInterval(function () {

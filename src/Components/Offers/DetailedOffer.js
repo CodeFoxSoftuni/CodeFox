@@ -1,6 +1,7 @@
 import React from 'react';
 import Offer from '../../model/offer';
 import '../../Styles/detailOffer-Style.css'
+import $ from 'jquery';
 
 class DetailedOffer extends React.Component {
     constructor(props) {
@@ -17,6 +18,33 @@ class DetailedOffer extends React.Component {
         this.setState({details: response});
     }
 
+    addToLocalStorage() {
+        let infoChildren = ($('.detailed-offer-info').children().children());
+        let infoForStorage = {
+            category: undefined,
+            type: undefined,
+            price: undefined,
+        };
+        let innerTexts = [];
+        let i = 0;
+        for (let child of infoChildren) {
+            let prop = child.innerText.split(" ");
+            innerTexts.push(prop[1]);
+        }
+        infoForStorage.category = innerTexts[0];
+        infoForStorage.type = innerTexts[1];
+        infoForStorage.price = innerTexts[2];
+
+        let cart;
+        if(sessionStorage.cart){
+            cart = JSON.parse(sessionStorage.getItem('cart'));
+        }else{
+            cart=[];
+        }
+
+        cart.push(infoForStorage);
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+    }
     render() {
         return (
             <div className="detailed-offer" id="Offer">
@@ -26,19 +54,20 @@ class DetailedOffer extends React.Component {
                 </section>
                 <section className="detailed-offer-info">
                     <div>
-                        <span>Category: {this.state.details.category}</span>
+                        <span id="category">Category: {this.state.details.category}</span>
                     </div>
                     <div>
-                        <span>Type: {this.state.details.itemType}</span>
+                        <span id="type">Type: {this.state.details.itemType}</span>
                     </div>
                     <div>
-                        <span className="offerPrice">Cost: {this.state.details.price}</span>
+                        <span className="offerPrice" id="price">Cost: {this.state.details.price}</span>
                     </div>
                     <div>
-                        <span className="offerPrice">Description: {this.state.details.description}</span>
+                        <span className="offerPrice" id="descr">Description: {this.state.details.description}</span>
                     </div>
                     <div>
-                        <button id='buyBtn' type="submit" disabled={this.props.submitDisabled}>Buy</button>
+                        <button id='buyBtn' type="submit" disabled={this.props.submitDisabled}
+                         onClick={this.addToLocalStorage}>Add to cart</button>
                     </div>
                 </section>
             </div>

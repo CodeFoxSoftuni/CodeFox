@@ -15,6 +15,7 @@ import Category from './Components/Offers/CategoryPage';
 import About from './Components/About/AboutPage';
 import Contacts from './Components/About/ContactsPage';
 import MyOffers from './Components/Offers/MyOffers';
+import Cart from './Components/Cart/Cart';
 
 ReactDOM.render(
     <Router history={browserHistory}>
@@ -33,6 +34,7 @@ ReactDOM.render(
             <Route path="logout" component={Logout}/>
             <Route path="account" component={Account}/>
             <Route path="myOffers" component={MyOffers}/>
+            <Route path="shoppingCart" component={Cart}/>
         </Route>
     </Router>,
   document.getElementById('root')

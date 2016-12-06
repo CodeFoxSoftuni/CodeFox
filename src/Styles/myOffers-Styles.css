@@ -1,0 +1,17 @@
+#myOffers-container{
+    height: auto;
+    color: darkslategray;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+#center{
+    padding-left: 2em;
+    vertical-align:top;
+    display:table;
+}
+
+#myoffHeading{
+    text-align: center;
+    color:#133d3e;
+    font-family: "Josefin Sans", sans-serif;
+}

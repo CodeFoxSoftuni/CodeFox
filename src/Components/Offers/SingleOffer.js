@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router';
 
 class SingleOffer extends React.Component {
-
     render() {
         return (
             <span className="offer" id="singleOffer">

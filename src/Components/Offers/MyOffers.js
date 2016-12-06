@@ -20,21 +20,23 @@ export default class MyOffers extends Component {
 
     render() {
         return (
-            <div className="myOffers">
-                <h1>My Offers</h1>
-                {this.state.offers.map((item, index) => {
-                    return (
-                        <div className="all-offers" key={index}>
-                            <SingleOffer
-                                image={item.image}
-                                category={item.category}
-                                itemType={item.itemType}
-                                price={item.price}
-                                offerId={item._id}
-                            />
-                        </div>
-                    )
-                })}
+            <div id="myOffers-container">
+                    <div className="myOffers">
+                        <h1 id="myoffHeading">My Offers</h1>
+                        {this.state.offers.map((item, index) => {
+                            return (
+                                <div className="all-offers" key={index}>
+                                    <SingleOffer
+                                        image={item.image}
+                                        category={item.category}
+                                        itemType={item.itemType}
+                                        price={item.price}
+                                        offerId={item._id}
+                                    />
+                                </div>
+                            )
+                        })}
+                    </div>
             </div>
         )
     }
