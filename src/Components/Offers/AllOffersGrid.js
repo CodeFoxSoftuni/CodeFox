@@ -18,19 +18,11 @@ export default class AllOffersGrid extends React.Component {
             <div id="container">
                 <section id="left" className="categoriesMenu">
                     <div id='section-label' className="category-link">CATEGORIES</div>
-<<<<<<< HEAD
-                    <Link to="/category/All" className="category-link">All</Link>
-                    <Link to="/category/Lingerie" className="category-link">Lingerie</Link>
-                    <Link to="/category/Bottoms" className="category-link">Bottoms</Link>
-                    <Link to="/category/Top" className="category-link">Top</Link>
-                    <Link to="/category/Sport" className="category-link">Sport</Link>
-=======
                     <Link to="/category/All" className="category-link" onClick={this.categoryClickHandler}>All</Link>
                     <Link to="/category/Lingerie" className="category-link" onClick={this.categoryClickHandler} name="Lingerie">Lingerie</Link>
                     <Link to="/category/Bottoms" className="category-link" onClick={this.categoryClickHandler} name="Bottoms">Bottoms</Link>
-                    <Link to="/category/Shirts-Blouses-etc." className="category-link" onClick={this.categoryClickHandler} name="Top">Shirts, Blouses etc.</Link>
-                    <Link to="/category/Sport wear" className="category-link" onClick={this.categoryClickHandler} name="Sport-wear">Sport wear</Link>
->>>>>>> origin/master
+                    <Link to="/category/Top" className="category-link" onClick={this.categoryClickHandler} name="Top">Top</Link>
+                    <Link to="/category/Sport" className="category-link" onClick={this.categoryClickHandler} name="Sport">Sport</Link>
                 </section>
                 <br></br>
                 <section id="center">

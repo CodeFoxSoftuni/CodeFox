@@ -82,7 +82,7 @@ class App extends Component {
     }
     componentDidMount() {
         let images = [
-            "http://fashionexprez.com/wp-content/uploads/2015/10/Latest-Street-Fashion-In-American-For-Women-2015.jpg"
+            "http://bit.ly/2gz8s6u"
         ];
         let i = 0;
         setInterval(function () {
