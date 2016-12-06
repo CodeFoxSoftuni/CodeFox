@@ -9,6 +9,9 @@ export default class Cart extends Component {
         let total = 0;
         for (let product of  JSON.parse(sessionStorage.cart)){
             let removeBtn = $('<button type="submit" className="btn btn--right" id="removeBtn">Remove</button>');
+            removeBtn.click(function(e) {
+                //implement delete
+            });
             let li = $("<li></li>").text('Category: '+product.category+', Type: '+product.type+', Price: '+product.price);
             li.append(removeBtn);
             $('#products').append(li);
@@ -17,8 +20,8 @@ export default class Cart extends Component {
         let totalLi = $("<li></li>").text('Total: ' + total);
         totalLi.addClass('total');
         $('#products').append(totalLi);
-        console.log(JSON.parse(sessionStorage.cart));
     }
+
     render() {
         return (
             <form className="cart-container" onSubmit={this.props.onSubmitHandler}>

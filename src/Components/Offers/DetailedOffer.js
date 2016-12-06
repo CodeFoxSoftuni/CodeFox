@@ -21,9 +21,7 @@ class DetailedOffer extends React.Component {
     addToLocalStorage() {
         let infoChildren = ($('.detailed-offer-info').children().children());
         let infoForStorage = {
-            id:undefined,
             category: undefined,
-            type: undefined,
             price: undefined,
             description: undefined
         };
@@ -46,7 +44,6 @@ class DetailedOffer extends React.Component {
 
         cart.push(infoForStorage);
         sessionStorage.setItem('cart', JSON.stringify(cart));
-
     }
     render() {
         return (

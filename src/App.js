@@ -59,8 +59,6 @@ class App extends Component {
                             <li><Link to="/account" className="nav-bar-link">My Account</Link></li>
                             <li><Link to="/create" className="nav-bar-link">Create Offer</Link></li>
                             <li><Link to="/myOffers" className="nav-bar-link">My Offers</Link></li>
-                            <li><Link to="/sendMsg" className="nav-bar-link">Send Message</Link></li>
-                            <li><Link to="/messages" className="nav-bar-link">Messages</Link></li>
                             <li><Link to="/logout" className="nav-bar-link">Logout</Link></li>
                         </ul>
                     </div>
