@@ -16,7 +16,7 @@ export default class CreateForm extends Component {
                         <option value="socks">Socks</option>
                         <option value="boxers">Boxers</option>
                     </optgroup>
-                    <optgroup className="optionGroup" label="Shirts, Blouses, Sweaters">
+                    <optgroup className="optionGroup" label="Top">
                         <option value="blouses">Blouses</option>
                         <option value="shirts">Shirts</option>
                         <option value="sweaters">Sweaters</option>
@@ -43,8 +43,8 @@ export default class CreateForm extends Component {
                     <option value="Lingerie">Lingerie</option>
                     <option value="Bottoms">Bottoms</option>
                     <option value="Shoes">Shoes</option>
-                    <option value="Shirts-Blouses-Sweaters">Shirts, Blouses, Sweaters</option>
-                    <option value="Sport-wear">Sport wear</option>
+                    <option value="Top">Top</option>
+                    <option value="Sport">Sport</option>
                 </select>
                 <div className="stepHeading">Step 3: Upload Image</div>
                 <div className="previewComponent">

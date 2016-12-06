@@ -8,8 +8,8 @@ export default class CreatePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            itemType: 'Bras', // Set on bras, because it is the first item in the list, and if user does not change the list itemType will be empty
-            category: 'Lingerie',
+            itemType: 'Empty', // Set on bras, because it is the first item in the list, and if user does not change the list itemType will be empty
+            category: 'Empty',
             imagePreviewUrl: '',
             description: '',
             price: ''

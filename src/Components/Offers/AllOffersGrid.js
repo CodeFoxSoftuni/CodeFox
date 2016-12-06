@@ -17,8 +17,8 @@ export default class AllOffersGrid extends React.Component {
                     <Link to="/category/All" className="category-link">All</Link>
                     <Link to="/category/Lingerie" className="category-link">Lingerie</Link>
                     <Link to="/category/Bottoms" className="category-link">Bottoms</Link>
-                    <Link to="/category/Shirts, Blouses etc." className="category-link">Shirts, Blouses etc.</Link>
-                    <Link to="/category/Sport wear" className="category-link">Sport wear</Link>
+                    <Link to="/category/Top" className="category-link">Top</Link>
+                    <Link to="/category/Sport" className="category-link">Sport</Link>
                 </section>
                 <br></br>
                 <section id="center">
