@@ -7,7 +7,6 @@ const DatabaseRequester = (function () {
     const kinveyAppAuthHeaders = {
         'Authorization': "Basic " + btoa(appKey + ":" + appSecret),
     };
-    let userId = sessionStorage.getItem('userId');
 
     function loginUser(username, password) {
         return $.ajax({
@@ -92,7 +91,10 @@ const DatabaseRequester = (function () {
     }
 
     function findMyOffersOnly() {
+        let userId = sessionStorage.getItem('userId');
         let query = '?query='+ JSON.stringify({"_acl.creator":userId});
+        console.log(userId)
+        console.log(JSON.stringify({"_acl.creator":userId}))
         return $.ajax({
             method: "GET",
             url: baseUrl + "appdata/" + appKey + '/clothes/' + query,
@@ -100,6 +102,7 @@ const DatabaseRequester = (function () {
         });
     }
     function editMyAccountInfo(photo) {
+        let userId = sessionStorage.getItem('userId');
         return $.ajax({
             method: "PUT",
             url: baseUrl + "user/" + appKey + '/' + userId,
