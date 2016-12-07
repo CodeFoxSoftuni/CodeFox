@@ -80,16 +80,9 @@ class App extends Component {
     }
     componentDidMount() {
         let images = [
-            "http://bit.ly/2gz8s6u"
+            "http://fashionexprez.com/wp-content/uploads/2015/10/Latest-Street-Fashion-In-American-For-Women-2015.jpg"
         ];
-        let i = 0;
-        setInterval(function () {
-            $('body').css("background", "url(" + images[i] + ")");
-            i += 1;
-            if (i === images.length) {
-                i = 0;
-            }
-        }, 6100);
+        $('body').css("background", "url(" + images[0] + ")");
         this.onSessionUpdate();
         let divHeight = Number($('#header-wrap').height()) / 16;
         $('#main').css('margin-top', divHeight + 'em');

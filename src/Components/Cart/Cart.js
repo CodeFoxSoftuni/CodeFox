@@ -16,7 +16,6 @@ export default class Cart extends Component {
             $('#products').append(li);
             total+=Number(product.price.match(/\d+/)[0]);
             removeBtn.click(function(e) {
-
                 for (let key in cartArray) {
                     if (cartArray[key]._id === product._id) {
                         cartArray.splice(Number(key), 1);
