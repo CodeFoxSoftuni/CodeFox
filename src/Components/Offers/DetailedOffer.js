@@ -1,7 +1,7 @@
 import React from 'react';
 import Offer from '../../model/offer';
 import '../../Styles/detailOffer-Style.css'
-import $ from 'jquery';
+
 
 class DetailedOffer extends React.Component {
     constructor(props) {
@@ -19,21 +19,24 @@ class DetailedOffer extends React.Component {
     }
 
     addToLocalStorage() {
-        let infoChildren = ($('.detailed-offer-info').children().children());
+        // let infoChildren = ($('.detailed-offer-info').children().children());
         let infoForStorage = {
             category: undefined,
             price: undefined,
-            description: undefined
+            description: undefined,
+            _id: undefined
         };
-        let innerTexts = [];
-        for (let child of infoChildren) {
-            let prop = child.innerText.split(" ");
-            innerTexts.push(prop[1]);
-        }
-        infoForStorage.description = innerTexts[3];
-        infoForStorage.category = innerTexts[0];
-        infoForStorage.type = innerTexts[1];
-        infoForStorage.price = innerTexts[2];
+        // console.log(this.state.details._id)
+        // let innerTexts = [];
+        // for (let child of infoChildren) {
+        //     let prop = child.innerText.split(" ");
+        //     innerTexts.push(prop[1]);
+        // }
+        infoForStorage.description = this.state.details.description
+        infoForStorage.category = this.state.details.category
+        infoForStorage.type = this.state.details.itemType
+        infoForStorage.price = this.state.details.price
+        infoForStorage._id = this.state.details._id
 
         let cart;
         if(sessionStorage.cart){
@@ -67,7 +70,7 @@ class DetailedOffer extends React.Component {
                     </div>
                     <div>
                         <button id='buyBtn' type="submit" disabled={this.props.submitDisabled}
-                         onClick={this.addToLocalStorage}>Add to cart</button>
+                         onClick={this.addToLocalStorage.bind(this)}>Add to cart</button>
                     </div>
                 </section>
             </div>
